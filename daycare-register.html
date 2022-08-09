@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User-registration</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/bc867c7232.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/bc867c7232.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <!-- customize stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="form.css">
+</head>
+
+<body>
+    <!-- navigation bar -->
+    <div class="container mb-5">
+        <nav class="navbar fixed-top navbar-expand-lg">
+
+            <a class="link navbar-brand" href="#">Children-cloud</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="link nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="link nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="link nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Child-Care Categories
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                            <li><a class="dropdown-item" href="#">Toddler</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Pre-School</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">School-Age</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Special-Child</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Foreigner-Child</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="link nav-link" href="">Parenting-Guide</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="user-dropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-circle-user"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby=user-dropdown">
+                            <li><a class="dropdown-item" href="login-page.html">Log In</a></li>
+                            <hr>
+                            <li><a class="dropdown-item" href="register-page.html">Register</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+    </div>
+    <!-- Ending navigation bar -->
+    <main>
+        <section class="daycare-form container">
+            <div class="row d-flex align-items-center h-75">
+                <div class="col-lg-6">
+                    <h1>Welcome to Children-Cloud!</h1>
+                </div>
+                <div class="col-lg-6">
+                    <h2 style="text-align: center;">
+                        Give Necessary Information About Your Day Care Center
+
+                    </h2>
+                    <form action="" class="form-style">
+                        <p>Name<br><input class="holder" type="text" name="day-name" id="bname"
+                                placeholder="Enter your name">
+                        </p>
+                        <p>Email<br><input class="holder" type="email" name="day-email" id="day-email"
+                                placeholder="Enter your email"></p>
+                        <p>Number<br><input class="holder" type="number" name="day-number" id="day-number"
+                                placeholder="Enter your phone number"></p>
+                        <p>Adress<br><input class="holder" type="text" name="day-address" id="sday-address"
+                                placeholder="Enter your address">
+                        </p>
+                        <p>Password
+                            <input type="password" class="holder" name="day-password" id="day-password"
+                                placeholder="Enter your password">
+                        </p>
+
+
+
+                        <table>
+                            <tr>
+                                <td class="time">
+                                    <p>Start Time<br><input class="holder" type="number" name="day-stime" id="day-stime"
+                                            placeholder="Enter the start time">
+                                    </p>
+                                </td>
+                                <td>
+                                    <label for="sam"><input type="radio" name="stime" id="sam">AM
+                                    </label>
+                                    <label for="spm"><input type="radio" name="stime" id="spm">PM</label>
+
+                                </td>
+
+                            </tr>
+                        </table>
+                        <table>
+                            <tr>
+                                <td class="time">
+                                    <p>End Time<br><input class="holder" type="number" name="day-etime" id="day-etime"
+                                            placeholder="Enter the end time">
+                                    </p>
+                                </td>
+                                <td>
+                                    <label for="eam"><input type="radio" name="etime" id="eam">AM
+                                    </label>
+                                    <label for="epm"><input type="radio" name="etime" id="epm">PM</label>
+
+                                </td>
+
+                            </tr>
+                        </table>
+
+                        <br>
+
+                        <!-- Facilitiessssssssssssssss -->
+                        <div class="small-font accordion accordion-flush" id="accordionFlushExample1">
+                            <h1>
+                                Facilities
+                            </h1>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-food">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-food-collapse" aria-expanded="false"
+                                        aria-controls="flush-food-collapse">
+                                        Food & Nutrition
+                                    </button>
+
+                                </h2>
+                                <div id="flush-food-collapse" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-food" data-bs-parent="#accordionFlushExample1">
+                                    <div class="accordion-body">
+
+                                        <textarea name="payment-per-hour-school" id="payment-per-hour-school" cols="30"
+                                            rows="10"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-medi">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-medi-collapse" aria-expanded="false"
+                                        aria-controls="flush-medi-collapse">
+                                        Medication,Treatment & Doctor
+                                    </button>
+
+                                </h2>
+                                <div id="flush-medi-collapse" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-medi" data-bs-parent="#accordionFlushExample1">
+                                    <div class="accordion-body">
+
+                                        <textarea name="payment-per-hour-school" id="payment-per-hour-school" cols="30"
+                                            rows="10"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-hygiene">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-hygiene-collapse" aria-expanded="false"
+                                        aria-controls="flush-hygiene-collapse">
+                                        Sanitary Kit & Hygiene
+                                    </button>
+
+                                </h2>
+                                <div id="flush-hygiene-collapse" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-hygiene" data-bs-parent="#accordionFlushExample1">
+                                    <div class="accordion-body">
+
+                                        <textarea name="payment-per-hour-school" id="payment-per-hour-school" cols="30"
+                                            rows="10"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-transport">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-transport-collapse" aria-expanded="false"
+                                        aria-controls="flush-transport-collapse">
+                                        Transportation
+                                    </button>
+
+                                </h2>
+                                <div id="flush-transport-collapse" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-transport" data-bs-parent="#accordionFlushExample1">
+                                    <div class="accordion-body">
+
+                                        <textarea name="payment-per-hour-school" id="payment-per-hour-school" cols="30"
+                                            rows="10"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-entertainment">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-entertainment-collapse" aria-expanded="false"
+                                        aria-controls="flush-entertainment-collapse">
+                                        Entertainment
+                                    </button>
+
+                                </h2>
+                                <div id="flush-entertainment-collapse" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-entertainment" data-bs-parent="#accordionFlushExample1">
+                                    <div class="accordion-body">
+
+                                        <textarea name="payment-per-hour-school" id="payment-per-hour-school" cols="30"
+                                            rows="10"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                            <!-- Categorieeeeeeeeeeees -->
+                            <div class="small-font accordion accordion-flush" id="accordionFlushExample">
+                                <h1>
+                                    Categories
+                                </h1>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingOne">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+                                            aria-expanded="false" aria-controls="flush-collapseOne">
+                                            Toddler
+                                        </button>
+
+                                    </h2>
+                                    <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                        aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">
+                                            <h6>Learning and entertainment in English language</h6>
+                                            <textarea name="foreigner-teaching" id="foreigner-teaching" cols="30"
+                                                rows="10"></textarea>
+                                            <h6>Payment Per hour</h6>
+                                            <textarea name="payment-per-hour-school" id="payment-per-hour-school"
+                                                cols="30" rows="10"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingTwo">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
+                                            aria-expanded="false" aria-controls="flush-collapseTwo">
+                                            Pre-School
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                        aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">
+
+                                            <h6>Schooling & Teaching</h6>
+                                            <textarea name="schooling-teaching" id="schooling-teaching" cols="30"
+                                                rows="10"></textarea>
+                                            <h6>Payment Per hour</h6>
+                                            <textarea name="payment-per-hour-preschool" id="payment-per-hour-preschool"
+                                                cols="30" rows="10"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                        aria-controls="flush-collapseThree">
+                                        School-Age
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <h6>Advance Teaching(Tution, Homework and Library Facilities)</h6>
+                                        <textarea name="advance-teaching" id="advance-teaching" cols="30"
+                                            rows="10"></textarea>
+                                        <h6>Payment Per hour</h6>
+                                        <textarea name="payment-per-hour-school" id="payment-per-hour-school" cols="30"
+                                            rows="10"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseFour" aria-expanded="false"
+                                        aria-controls="flush-collapseFour">
+                                        Special-Child
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseFour" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <h6>Special Need(Autism,Language delays,Cognitive delays,Social
+                                            disorder,Physical
+                                            disabilities)
+                                        </h6>
+                                        <textarea name="special-teaching" id="speical-teaching" cols="30"
+                                            rows="10"></textarea>
+                                        <h6>Payment Per hour</h6>
+                                        <textarea name="payment-per-hour-school" id="payment-per-hour-school" cols="30"
+                                            rows="10"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingFive">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseFive" aria-expanded="false"
+                                        aria-controls="flush-collapseFive">
+                                        Foreigner-Child
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseFive" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+
+                                        <h6>Learning and entertainment in English language</h6>
+                                        <textarea name="foreigner-teaching" id="foreigner-teaching" cols="30"
+                                            rows="10"></textarea>
+                                        <h6>Payment Per hour</h6>
+                                        <textarea name="payment-per-hour-school" id="payment-per-hour-school" cols="30"
+                                            rows="10"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+                        <br>
+                        <br>
+                        <span><button type="submit" id="signup-daycare">Sign Up</button>
+                            <button type="reset" id="signup-daycare-reset">Reset</button></span>
+                    </form>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>

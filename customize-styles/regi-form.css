@@ -1,0 +1,115 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #e7f1ff;
+}
+
+.outer-box {
+
+    background-image: linear-gradient(rgba(37, 43, 44, 0.89), rgba(187, 205, 231, 0.6)), url(../images/banner/pre1.jpg);
+    background-repeat: no-repeat;
+    margin: auto;
+
+
+}
+
+.daycare-form {
+    background-color: white;
+    color: black;
+    padding: auto;
+}
+
+.daycare-login-form {
+    background-color: white;
+    color: black;
+    padding-top: 12%;
+    padding-bottom: 12%;
+}
+
+.user-login-form {
+    background-color: white;
+    color: black;
+    padding-top: 12%;
+    padding-bottom: 12%;
+}
+
+.user-form {
+    margin-top: 0;
+    background-color: white;
+    color: black;
+}
+
+.welcome {
+    color: black;
+    font-weight: 600;
+    text-align: justify;
+}
+
+
+
+.thumbnail {
+
+    background: rgb(0, 0, 0);
+    /* Fallback color */
+    background: rgba(0, 0, 0, 0.25);
+    /* Black background with 0.5 opacity */
+    position: relative;
+    color: #f1f1f1;
+    padding-top: 25%;
+    padding-bottom: 25%;
+    padding-right: 25%;
+
+
+}
+
+.thumbnail>h1,
+.thumbnail>p {
+
+    color: white;
+}
+
+textarea {
+    width: 100%;
+    height: 50px;
+    border: 2px solid rgb(114, 114, 168);
+
+    outline: none;
+    border-radius: 10px;
+    overflow: auto;
+    /* overflow-y: scroll; */
+}
+
+textarea:hover {
+    border: 2px solid blue;
+}
+
+/* scrollbar design */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+h6 {
+    font-weight: 350px;
+    font-size: 13px;
+
+}
+
+.required::after {
+    content: " *";
+    color: red;
+}

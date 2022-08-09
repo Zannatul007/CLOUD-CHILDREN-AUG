@@ -1,0 +1,50 @@
+.cloud-children-nav {
+    background-color: rgb(55, 216, 216);
+    color: white;
+    font-weight: 700;
+}
+
+.navbar-brand {
+    font-weight: 800;
+    color: white;
+}
+
+.nav-link {
+    color: white;
+}
+
+.nav-link:hover {
+    color: blanchedalmond;
+}
+
+.dropdown-menu {
+
+    background-color: rgb(55, 216, 216)
+}
+
+.dropdown-item {
+    color: white;
+    font-weight: 700;
+}
+
+.dropdown-toggle {
+    color: blanchedalmond
+}
+
+.dropdown-menu:hover {
+    color: blanchedalmond;
+}
+
+.fa-solid {
+    color: white;
+    position: right;
+
+}
+
+.cloud-children-carousel img {
+
+    width: 100%;
+    height: 30rem;
+    border-radius: .5rem;
+    box-shadow: 10px 40px 80px gray;
+}

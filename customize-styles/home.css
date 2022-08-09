@@ -1,0 +1,110 @@
+body {
+    color: #11554e;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.navbar {
+
+    background-color: white;
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+
+}
+
+.dropdown-menu {
+    width: 1rem;
+}
+
+.fa-solid {
+    color: #121c52;
+}
+
+.link {
+    color: #121c52;
+    font-weight: 500;
+}
+
+.link:hover {
+    color: #11554e;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+
+.link:visited {
+
+    color: #121c52;
+}
+
+img {
+    width: 100%;
+    height: 30rem;
+}
+
+
+.headings {
+    color: #121c52;
+    font-weight: 500;
+}
+
+.card {
+    padding: 2rem;
+}
+
+.card-title {
+    padding-bottom: 1rem;
+}
+
+p {
+    font-size: 12px;
+}
+
+.footer-basic {
+    background-color: #121c52;
+    color: gray;
+    font-size: medium;
+
+
+}
+
+.company-name {
+    color: white;
+    font-weight: 600;
+}
+
+.list-head {
+    color: white;
+}
+
+.fa-paper-plane {
+    color: gray;
+}
+
+
+.footer-basic ul {
+
+
+    padding: 0;
+    list-style: none;
+    line-height: 1.6;
+    margin-bottom: 0;
+
+
+}
+
+.blog-img {
+    width: 18rem;
+    height: 12rem;
+}
+
+.footer-link {
+    text-decoration: none;
+    color: grey;
+}
+
+.footer-link:hover {
+    color: white;
+
+}
