@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <?php
 //Starting Session
 session_start();
@@ -10,16 +9,33 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Bootstrap Link-->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../customize-styles/regi-form.css">
-    <link rel="stylesheet" href="../customize-styles/home.css">
+
+    <!--Customize css link-->
+    <link rel="stylesheet" href="../css/style_new.css">
+    <link rel="stylesheet" href="../css/form.css">
+
+
+    <!--Swiper cdn-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../css/swiper.css">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!--comapny logo font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/bc867c7232.js" crossorigin="anonymous"></script>
     <title>Day Care Categories</title>
 </head>
+
 <?php
 //Checking which user is loggedin
 $daycare = $people = $userlogged = "";
@@ -39,105 +55,60 @@ if ($people != "") {
 
 ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../customize-styles/home.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="../customize-styles/regi-form.css">
-    <script src="https://kit.fontawesome.com/bc867c7232.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
-
-    <title>User login form </title>
-</head>
 
 <body>
 
     <!-- navigation bar -->
-    <div class="container mb-5">
-        <nav class="navbar fixed-top navbar-expand-lg">
+    <!--navigation Bar-->
 
-            <a class="link navbar-brand" href="#">Children-cloud</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="link nav-link active" aria-current="page" href="../index.html">Home</a>
-                    </li>
+    <nav class="header-2 navigation-bar navbar navbar-expand-lg">
 
-                    <!-- <li class="nav-item">
-                        <a class="link nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="link nav-link" href="#services">Services</a>
-                    </li> -->
-                    <li class="nav-item dropdown">
-                        <a class="link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Child-Care Categories
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto  ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About Us</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
 
-                            <li><a class="dropdown-item" href="#toddler">Toddler</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#preschool">Pre-School</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#schoolage">School-Age</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#special">Special-Child</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#foreigner">Foreigner-Child</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="link nav-link" href="">Parenting-Guide</a>
-                    </li>
+                <li class="nav-item dropdown">
+                    <a class="link nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Child-Care Categories
+                    </a>
+                    <ul class="dropdown-menu" id="dropmenu" aria-labelledby="navbarDropdown">
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="user-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa-solid fa-circle-user"></i>
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="user-dropdown">
-                            <li><a class="dropdown-item" href="../login-page.html">Log In</a></li>
-                            <hr>
-                            <li><a class="dropdown-item" href="../register-page.html">Register</a></li>
-                        </ul>
-                    </li>
-                </ul>
+                        <li><a class="dropdown-item" href="#">Toddler</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Pre-School</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">School-Age</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Special-Child</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Foreigner-Child</a></li>
+                    </ul>
+                </li>
 
-            </div>
-    </div>
-    <!-- Ending navigation bar -->
-    <!-- <div class="outer-box container mt-5 mb-5">
 
-        <div class="row d-flex  align-items-center">
-            <div class=" col-lg-6 p-3">
+                <li><a href="#parenting-blogs" class="nav-link">Parenting-Guides</a></li>
+            </ul>
 
-                 <img id="form-img" src="images/form/form-todd.jpg" alt=""> 
-                <div class="container thumbnail">
-                    <h1>Welcome to Children-cloud!!</h1>
-                    <p>
-                        Parenting Guide,user, Preschool,School-age,Special-childcare everything in one place for
-                        new
-                        and young parents.
-                    </p>
-                </div>
-
-            </div>
         </div>
-    </div> -->
+
+    </nav>
+
+
+
+
     <!------------------------Showing Contents----------------->
     <!-----------------Booking for Toodler Section------------->
     <br>
@@ -187,78 +158,63 @@ if ($people != "") {
     ?>
 
         <!--Section: News of the day-->
-        <section class="container my-5 " style="height:15rem;background-color:aliceblue">
-            <div class="row gx-5">
-                <div class="col-md-6 mb-4">
-                    <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
-                        <img src="https://mdbcdn.b-cdn.net/img/new/slides/080.webp" class="img-thumbnail" />
-                        <a href="#!">
-                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                        </a>
+        <div class="row cols-lg-3">
+            <div class="col">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="cat-img">
+                            <img src="../images/blogs/mother_baby.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="cat-details-info col-lg-12">
+                        <?php
+                        echo $row_2["dname"]; ?>
+                        <hr>
+                    </div>
+                    <div class="cat-details-info col-lg-12">
+                        <?php echo "toddler"; ?>
+                        <hr>
+                    </div>
+                    <div class="cat-details-info col-lg-12">
+                        <?php echo $row_1["payment"]; ?>
+                        <hr>
+                    </div>
+                    <div class="cat-details-info col-lg-12">
+                        <?php echo $row_2['district']; ?>
+                        <hr>
                     </div>
                 </div>
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 
-                <div class="col-md-6 mb-4">
+                    <button class="btn btn-primary btn-block btn-sm btn filter_status" type="submit" name="<?php echo $o; ?>">Book Now!</button>
 
-                    <h4><strong><?php
-                                echo '<br>';
-                                echo $row_2["dname"];
-                                echo '<br>'; ?></strong></h4>
-                    <p class="categoryWise">
-                        <?php
-                        echo $row_2['district'];
-                        echo '<br>';
-                        ?>
-
-                    </p>
-                    <p class="categoryWise"> <?php
-                                                echo "toodler";
-                                                echo '<br>'; ?>
-                    </p>
-
-                    <p class="categoryWise">
-                        <?php
-                        echo $row_1["payment"];
-                        echo '<br>';
-                        ?>
-                    </p>
-
-                    <p class="categoryWise">
-                        <?php
-                        echo $row_2["dadress"];
-                        echo '<br>';
-                        ?>
-                    </p>
-
-                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-
-                        <button class="btn btn-primary btn-block btn-sm btn filter_status" type="submit" name="<?php echo $o; ?>">Book Now!</button>
-
-                    </form>
-                </div>
+                </form>
             </div>
-        </section>
+        </div>
 
 
-    <?php
-    }
-    // echo '<br>';
-    // echo $row_2["dname"];
-    // echo '<br>';
-    //Showing category
-    // echo "toodler";
-    // echo '<br>';
-    //Showing Pament
-    // echo $row_1["payment"];
-    // echo '<br>';
-    //Showing Daycare Adress
-    // echo $row_2["dadress"];
-    // echo '<br>';
-    //Showing district
-    // echo $row_2['district'];
-    // echo '<br>';
 
-    ?>
+
+
+        // <?php
+        }
+        //echo $row_2["dname"];
+        //Showing category
+        //echo "toodler";
+        //echo '<br>';
+        //echo '<br>';
+        //Showing Pament
+        //echo '<br>';
+        //echo $row_1["payment"];
+        //echo '<br>';
+        //Showing Daycare Adress
+        //echo $row_2["dadress"];
+        //echo '<br>';
+        //Showing district
+        //echo $row_2['district'];
+        //echo '<br>';
+
+            ?>
 
     <!---------------------See Details of DayCare----------------------------->
 
@@ -301,62 +257,47 @@ if ($people != "") {
         $query->close();
     ?>
 
-        <section class="my-5 container" style="height:15rem;background-color:aliceblue">
-            <div class="row gx-5">
-                <div class="col-md-6 mb-4">
-                    <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
-                        <img src="https://mdbcdn.b-cdn.net/img/new/slides/080.webp" class="img-thumbnail" />
-                        <a href="#!">
-                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                        </a>
+        <div class="row cols-lg-3">
+            <div class="col">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="cat-img">
+                            <img src="../images/blogs/mother_baby.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="cat-details-info col-lg-12">
+                        <?php
+                        echo $row_2["dname"]; ?>
+                        <hr>
+                    </div>
+                    <div class="cat-details-info col-lg-12">
+                        <?php echo "Pre-school"; ?>
+                        <hr>
+                    </div>
+                    <div class="cat-details-info col-lg-12">
+                        <?php echo $row_1["payment"]; ?>
+                        <hr>
+                    </div>
+                    <div class="cat-details-info col-lg-12">
+                        <?php echo $row_2['district']; ?>
+                        <hr>
                     </div>
                 </div>
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 
-                <div class="col-md-6 mb-4">
+                    <button class="btn btn-primary btn-block btn-sm btn filter_status" type="submit" name="<?php echo $o; ?>">Book Now!</button>
 
-                    <h4><strong><?php
-                                echo '<br>';
-                                echo $row_2["dname"];
-                                echo '<br>'; ?></strong></h4>
-                    <p class="categoryWise">
-                        <?php
-                        echo $row_2['district'];
-                        echo '<br>';
-                        ?>
-
-                    </p>
-                    <p class="categoryWise"> <?php
-                                                echo "Pre-School";
-                                                echo '<br>'; ?>
-                    </p>
-
-                    <p class="categoryWise">
-                        <?php
-                        echo $row_1["payment"];
-                        echo '<br>';
-                        ?>
-                    </p>
-
-                    <p class="categoryWise">
-                        <?php
-                        echo $row_2["dadress"];
-                        echo '<br>';
-                        ?>
-                    </p>
-
-                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-
-                        <button class="btn btn-primary btn-block btn-sm btn filter_status" type="submit" name="<?php echo $o; ?>">Book Now!</button>
-
-                    </form>
-                </div>
+                </form>
             </div>
-        </section>
+        </div>
 
 
 
 
-        <br>
+
+
+
+
     <?php
 
     }
@@ -398,57 +339,39 @@ if ($people != "") {
         $query->close();
     ?>
 
-        <section class="container my-5" style="height:15rem;background-color:aliceblue">
-            <div class="row gx-5">
-                <div class="col-md-6 mb-4">
-                    <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
-                        <img src="https://mdbcdn.b-cdn.net/img/new/slides/080.webp" class="img-thumbnail" />
-                        <a href="#!">
-                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                        </a>
+        <div class="row cols-lg-3">
+            <div class="col">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="cat-img">
+                            <img src="../images/blogs/mother_baby.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="cat-details-info col-lg-12">
+                        <?php
+                        echo $row_2["dname"]; ?>
+                        <hr>
+                    </div>
+                    <div class="cat-details-info col-lg-12">
+                        <?php echo "School-Age"; ?>
+                        <hr>
+                    </div>
+                    <div class="cat-details-info col-lg-12">
+                        <?php echo $row_1["payment"]; ?>
+                        <hr>
+                    </div>
+                    <div class="cat-details-info col-lg-12">
+                        <?php echo $row_2['district']; ?>
+                        <hr>
                     </div>
                 </div>
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 
-                <div class="col-md-6 mb-4">
+                    <button class="btn btn-primary btn-block btn-sm btn filter_status" type="submit" name="<?php echo $o; ?>">Book Now!</button>
 
-                    <h4><strong><?php
-                                echo '<br>';
-                                echo $row_2["dname"];
-                                echo '<br>'; ?></strong></h4>
-                    <p class="categoryWise">
-                        <?php
-                        echo $row_2['district'];
-                        echo '<br>';
-                        ?>
-
-                    </p>
-                    <p class="categoryWise"> <?php
-                                                echo "School-Age";
-                                                echo '<br>'; ?>
-                    </p>
-
-                    <p class="categoryWise">
-                        <?php
-                        echo $row_1["payment"];
-                        echo '<br>';
-                        ?>
-                    </p>
-
-                    <p class="categoryWise">
-                        <?php
-                        echo $row_2["dadress"];
-                        echo '<br>';
-                        ?>
-                    </p>
-
-                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-
-                        <button class="btn btn-primary btn-block btn-sm btn filter_status" type="submit" name="<?php echo $o; ?>">Book Now!</button>
-
-                    </form>
-                </div>
+                </form>
             </div>
-        </section>
+        </div>
 
 
 
@@ -501,58 +424,39 @@ if ($people != "") {
         $query->close();
     ?>
 
-        <section class="container my-5" style="height:15rem;background-color:aliceblue">
-            <div class="row gx-5">
-                <div class="col-md-6 mb-4">
-                    <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
-                        <img src="https://mdbcdn.b-cdn.net/img/new/slides/080.webp" class="img-thumbnail" />
-                        <a href="#!">
-                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                        </a>
+        <div class="row cols-lg-3">
+            <div class="col">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="cat-img">
+                            <img src="../images/blogs/mother_baby.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="cat-details-info col-lg-12">
+                        <?php
+                        echo $row_2["dname"]; ?>
+                        <hr>
+                    </div>
+                    <div class="cat-details-info col-lg-12">
+                        <?php echo "Special-Child"; ?>
+                        <hr>
+                    </div>
+                    <div class="cat-details-info col-lg-12">
+                        <?php echo $row_1["payment"]; ?>
+                        <hr>
+                    </div>
+                    <div class="cat-details-info col-lg-12">
+                        <?php echo $row_2['district']; ?>
+                        <hr>
                     </div>
                 </div>
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 
-                <div class="col-md-6 mb-4">
+                    <button class="btn btn-primary btn-block btn-sm btn filter_status" type="submit" name="<?php echo $o; ?>">Book Now!</button>
 
-                    <h4><strong><?php
-                                echo '<br>';
-                                echo $row_2["dname"];
-                                echo '<br>'; ?></strong></h4>
-                    <p class="categoryWise">
-                        <?php
-                        echo $row_2['district'];
-                        echo '<br>';
-                        ?>
-
-                    </p>
-                    <p class="categoryWise"> <?php
-                                                echo "Special-Child";
-                                                echo '<br>'; ?>
-                    </p>
-
-                    <p class="categoryWise">
-                        <?php
-                        echo $row_1["payment"];
-                        echo '<br>';
-                        ?>
-                    </p>
-
-                    <p class="categoryWise">
-                        <?php
-                        echo $row_2["dadress"];
-                        echo '<br>';
-                        ?>
-                    </p>
-
-                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-
-                        <button class="btn btn-primary btn-block btn-sm btn filter_status" type="submit" name="<?php echo $o; ?>">Book Now!</button>
-
-                    </form>
-                </div>
+                </form>
             </div>
-        </section>
-
+        </div>
 
         <!-------------------------Show Day Care Details--------------------------------->
 
@@ -603,57 +507,39 @@ if ($people != "") {
 
         <!--------------------------------Showing Day Care Details--------------->
 
-        <section class="container  my-5" style="height:15rem;background-color:aliceblue">
-            <div class="row gx-5">
-                <div class="col-md-6 mb-4">
-                    <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
-                        <img src="https://mdbcdn.b-cdn.net/img/new/slides/080.webp" class="img-thumbnail" />
-                        <a href="#!">
-                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                        </a>
+        <div class="row cols-lg-3">
+            <div class="col">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="cat-img">
+                            <img src="../images/blogs/mother_baby.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="cat-details-info col-lg-12">
+                        <?php
+                        echo $row_2["dname"]; ?>
+                        <hr>
+                    </div>
+                    <div class="cat-details-info col-lg-12">
+                        <?php echo "Foreign-Child"; ?>
+                        <hr>
+                    </div>
+                    <div class="cat-details-info col-lg-12">
+                        <?php echo $row_1["payment"]; ?>
+                        <hr>
+                    </div>
+                    <div class="cat-details-info col-lg-12">
+                        <?php echo $row_2['district']; ?>
+                        <hr>
                     </div>
                 </div>
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 
-                <div class="col-md-6 mb-4">
+                    <button class="btn btn-primary btn-block btn-sm btn filter_status" type="submit" name="<?php echo $o; ?>">Book Now!</button>
 
-                    <h4><strong><?php
-                                echo '<br>';
-                                echo $row_2["dname"];
-                                echo '<br>'; ?></strong></h4>
-                    <p class="categoryWise">
-                        <?php
-                        echo $row_2['district'];
-                        echo '<br>';
-                        ?>
-
-                    </p>
-                    <p class="categoryWise"> <?php
-                                                echo "Foreigner-Child";
-                                                echo '<br>'; ?>
-                    </p>
-
-                    <p class="categoryWise">
-                        <?php
-                        echo $row_1["payment"];
-                        echo '<br>';
-                        ?>
-                    </p>
-
-                    <p class="categoryWise">
-                        <?php
-                        echo $row_2["dadress"];
-                        echo '<br>';
-                        ?>
-                    </p>
-
-                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-
-                        <button class="btn btn-primary btn-block btn-sm btn filter_status" type="submit" name="<?php echo $o; ?>">Book Now!</button>
-
-                    </form>
-                </div>
+                </form>
             </div>
-        </section>
+        </div>
 
         <br>
     <?php

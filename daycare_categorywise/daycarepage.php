@@ -33,7 +33,7 @@ session_start();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
 
-    <title>Day Care Registration</title>
+    <title>Day Care Booking Page</title>
 </head>
 
 <body>
