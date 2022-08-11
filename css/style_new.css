@@ -497,6 +497,19 @@ html::-webkit-scrollbar-thumb {
 }
 
 /*category page design*/
+
+.fa-star {
+    color: #a8acc2;
+    padding: .3rem;
+    font-size: 1rem;
+}
+
+.checked {
+    color: orange;
+
+}
+
+
 hr {
     color: var(--green);
     height: .35rem;

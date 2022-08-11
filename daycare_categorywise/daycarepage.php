@@ -146,61 +146,27 @@ session_start();
                 <div class="row">
                     <div class="col-lg-12 ">
                         <div class="cat-img">
-                            <img class=" z-depth-3 img-thumbnail" src="../images/b_new_born.jpg" alt="">
+                            <img class=" z-depth-3 img-thumbnail" src="../images/blogs/mother_baby.jpg" alt="">
                         </div>
                     </div>
-                    <div class="col-lg-12">
-                        <div class="star-rating">
-                            <span>
-                                <i class="fa-light fa-star-sharp"></i>
-                            </span>
-                            <span>
-                                <i class="fa-light fa-star-sharp"></i>
-                            </span>
-                            <span>
-                                <i class="fa-light fa-star-sharp"></i>
-                            </span>
-                            <span>
-                                <i class="fa-light fa-star-sharp"></i>
-                            </span>
-                            <span>
-                                <i class="fa-light fa-star-sharp"></i>
-                            </span>
-                            <span>
-                                <i class="fa-light fa-star-sharp"></i>
-                            </span>
 
 
-
-                        </div>
-                    </div>
-                    <div class="cat-details-info col-lg-12">
-                        <span>
-                            <i class="fa-light fa-star-sharp"></i>
-                        </span>
-                        <span>
-                            <i class="fa-light fa-star-sharp"></i>
-                        </span>
-                        <span>
-                            <i class="fa-light fa-star-sharp"></i>
-                        </span>
-                        <span>
-                            <i class="fa-light fa-star-sharp"></i>
-                        </span>
-                        <span>
-                            <i class="fa-light fa-star-sharp"></i>
-                        </span>
-                        <span>
-                            <i class="fa-light fa-star-sharp"></i>
-                        </span>
-                    </div>
                     <div class="cat-details-info name col-lg-12">
 
                         <?php
                         echo $row["dname"];
+
                         ?>
-                        <hr>
+                        <div class="cat-details-info col-lg-12">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+
                     </div>
+
                     <div class="cat-details-info col-lg-12">
                         <span>District : </span>
                         <?php
@@ -223,7 +189,7 @@ session_start();
                         <span>Hours : </span>
                         <span><?php
                                 echo $row["starttime"];
-                                ?></span>
+                                ?></span> to
                         <span><?php
                                 echo $row["starttime"];
                                 ?></span>
