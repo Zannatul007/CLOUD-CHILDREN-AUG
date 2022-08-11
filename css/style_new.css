@@ -724,28 +724,26 @@ hr {
     color: #eeeeee;
     cursor: pointer;
     display: inline-block;
-    font-family: sans-serif;
-    font-size: 20px;
+
     text-align: center;
     text-decoration: none;
 }
 
 @keyframes glowing {
-        {
-        0% {
-            background-color: #2ba805;
-            box-shadow: 0 0 5px #2ba805;
-        }
+    0% {
+        background-color: var(--dark-blue);
+        box-shadow: 0 0 5px var(--dark-blue);
+    }
 
-        50% {
-            background-color: #49e819;
-            box-shadow: 0 0 20px #49e819;
-        }
+    50% {
+        background-color: rgb(45, 45, 192);
+        box-shadow: 0 0 20px rgb(45, 45, 192);
+    }
 
-        100% {
-            background-color: #2ba805;
-            box-shadow: 0 0 5px #2ba805;
-        }
+    100% {
+        background-color: rgb(15, 15, 87);
+        box-shadow: 0 0 5px rgb(15, 15, 87);
+        ;
     }
 }
 
@@ -758,7 +756,7 @@ hr {
 
     text-decoration: none;
     color: white;
-    font-size: var(--font-size);
+    font-size: 2rem;
     font-weight: var(--weight);
 }
 
