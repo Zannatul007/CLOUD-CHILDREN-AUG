@@ -419,7 +419,7 @@ session_start();
                         </div>
 
                         <div class="col-lg-12 mt-3">
-                            <input type="submit" class="btn form-btn w-100" name="register" value="NEXT">
+                            <input type="submit" class="form-btn w-100" name="register" value="NEXT">
 
 
                         </div>

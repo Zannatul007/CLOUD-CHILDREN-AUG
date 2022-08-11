@@ -168,7 +168,7 @@ html::-webkit-scrollbar-thumb {
 
 .header-in {
     width: 100%;
-    height: 2rem;
+
     z-index: 200000;
     position: fixed;
 
@@ -298,13 +298,9 @@ html::-webkit-scrollbar-thumb {
 
 
 
-.home-sec {
-    position:
-        margin: 0%;
-    height: 75rem;
-}
 
 .home-sec .homepage-img {
+
     height: 100%;
     width: 100%;
 }
@@ -470,6 +466,17 @@ html::-webkit-scrollbar-thumb {
     text-align: justify;
 }
 
+.blog-link a {
+
+    font-size: 1.2rem;
+    margin-left: 0;
+
+    text-decoration: none;
+    color: var(--green);
+
+
+}
+
 .rheading {
     margin-left: auto;
     margin-right: auto;
@@ -489,16 +496,195 @@ html::-webkit-scrollbar-thumb {
     width: 10rem;
 }
 
-.blog-link a {
-
-    font-size: 1.2rem;
-    margin-left: 0;
-
-    text-decoration: none;
+/*category page design*/
+hr {
     color: var(--green);
+    height: .35rem;
+}
+
+.home-sec {
+    padding-top: 14rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    height: 100%;
+}
+
+.cat-details .name {
+    font-size: 3rem;
+    font-family: 'Times New Roman', Times, serif;
+    color: var(--dark-greengreen);
+    text-align: center;
+}
+
+.cat-details-info {
+
+    padding-bottom: 1rem;
+    font-size: var(--font-size);
+    color: var(--dark-green);
+}
+
+.cat-details-info span {
+    font-weight: var(--weight);
+}
+
+
+.cat-img {
+    height: 20rem;
+    width: 100%;
 
 
 }
+
+.cat-img img {
+    height: 100%;
+    width: 100%;
+}
+
+
+
+.fa-star {
+    font-weight: 900;
+    color: yellow;
+}
+
+.cat-facilities h3 {
+    background-color: #5bb2863a;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 3rem;
+    color: var(--dark-green);
+    height: 100%;
+}
+
+.facilities-detail {
+
+    padding: 1.25rem;
+    color: var(--dark-green);
+    font-weight: var(--weight);
+}
+
+.facilities-detail button {
+    font-size: var(--font-size);
+    color: var(--dark-green);
+    font-weight: var(--weight);
+}
+
+
+/*give rating stars*/
+.rate {
+
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+
+}
+
+.give-rating {
+    background-color: #2E8B57;
+    padding: 1.5rem;
+    border-radius: 2rem;
+    ;
+}
+
+.give-rating h2 {
+    text-align: center;
+    color: white;
+
+}
+
+
+
+
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center
+}
+
+.rating>input {
+    display: none
+}
+
+.rating>label {
+    position: relative;
+    width: 1em;
+    font-size: 30px;
+    font-weight: 300;
+    color: #FFD600;
+    cursor: pointer
+}
+
+.rating>label::before {
+    content: "\2605";
+    position: absolute;
+    opacity: 0
+}
+
+.rating>label:hover:before,
+.rating>label:hover~label:before {
+    opacity: 1 !important
+}
+
+.rating>input:checked~label:before {
+    opacity: 1
+}
+
+.rating:hover>input:checked~label:before {
+    opacity: 0.4
+}
+
+
+.buttons {
+    position: relative;
+    top: 3rem;
+    z-index: 25;
+
+
+}
+
+
+.rating-submit {
+    border-radius: 2rem;
+    text-align: center;
+    background-color: #FFD600;
+    font-size: var(--font-size);
+    padding: 1.75rem;
+    color: var(--dark-blue);
+    font-weight: var(--weight);
+    width: 100%;
+}
+
+
+.rating-submit:hover {
+
+
+    font-size: 1.65rem;
+    color: #fff;
+}
+
+
+.give-comments {
+    margin-top: 3rem;
+    border-radius: 2rem;
+    background-color: #2e8b567c;
+}
+
+.give-comments h2 {
+    text-align: center;
+    color: var(--dark-green);
+    font-size: var(--font-size);
+    font-weight: var(--weight);
+}
+
+.comment-sec {
+    border-radius: 2rem;
+
+}
+
+
+
+
+
 
 .login-page {
     text-align: justify;
@@ -524,6 +710,56 @@ html::-webkit-scrollbar-thumb {
 
 .login-page a:hover {
     color: var(--green);
+}
+
+/*blinking book-now button*/
+.book-btn {
+    margin-top: 3rem;
+    background-color: #1c87c9;
+    -webkit-border-radius: 60px;
+    border-radius: 1.75rem;
+    width: 100%;
+    padding: 2rem;
+    border: none;
+    color: #eeeeee;
+    cursor: pointer;
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+@keyframes glowing {
+        {
+        0% {
+            background-color: #2ba805;
+            box-shadow: 0 0 5px #2ba805;
+        }
+
+        50% {
+            background-color: #49e819;
+            box-shadow: 0 0 20px #49e819;
+        }
+
+        100% {
+            background-color: #2ba805;
+            box-shadow: 0 0 5px #2ba805;
+        }
+    }
+}
+
+.book-btn {
+
+    animation: glowing 1300ms infinite;
+}
+
+.book-btn a {
+
+    text-decoration: none;
+    color: white;
+    font-size: var(--font-size);
+    font-weight: var(--weight);
 }
 
 /* media queries  */
