@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root {
+    --paletteColor1: #636a86;
+    --dark-blue: #121c52;
+    --green: #5bb286;
+    --dark-green: #11554e;
+    --opacity-color: #5bb2863a;
+    --weight: 600;
+    --title-size: 2.5rem;
+    --font-size: 1.5rem;
+
+    --black: #444;
+    --light-color: #a8acc2;
+    --border: .1rem solid rgba(0, 0, 0, .1);
+    --border2: .1rem solid rgba(0, 0, 0, .1);
+    --border-hover: .1rem solid var(--dark-color);
+    --border2-hover: .1rem solid var(--green);
+
+    --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+    transition: width none;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-padding-top: 5rem;
+    scroll-behavior: inherit;
+
+}
+
+html::-webkit-scrollbar {
+    width: 1rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--dark-color);
+}
+
+
+#company-logo {
+
+    font-size: medium;
+}
+
+#company-logo img {
+    width: 30%;
+}
+
+#company-logo a {
+    font-family: 'Pacifico', cursive;
+    text-decoration: none;
+    font-size: 2.5rem;
+    font-weight: 800;
+    font-style: italic;
+    color: var(--green);
+}
+
+#company-logo a:hover {
+    color: var(--dark-green);
+}
+
+
+.heading {
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 10005;
+}
+
+.heading::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: .75rem;
+    background: rgba(20, 213, 219, 0.1);
+    z-index: -1;
+}
+
+.heading span {
+    font-size: 3rem;
+    translate: uppercase;
+    padding: .5rem 2rem;
+    color: white;
+    background: var(--green);
+    border: var(--border);
+}
+
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .9rem 3rem;
+    border-radius: .5rem;
+    color: #fff;
+    background: var(--green);
+    font-size: 1.7rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn:hover {
+    background: var(--dark-color);
+}
+
+#login-btn {
+    font-size: 3rem;
+    color: var(--green);
+}
+
+#login-btn:hover {
+    color: var(--dark-green);
+}
+
+.header-in {
+    width: 100%;
+
+    z-index: 200000;
+    position: fixed;
+
+}
+
+
+
+.header .header-1 {
+    background: #fff;
+    height: 6rem;
+    padding-right: 9%;
+    padding-left: 9%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .header-1 .logo {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--green);
+}
+
+.header .header-1 .logo i {
+    color: var(--green);
+}
+
+
+.header .header-1 .icons div,
+.header .header-1 .icons a {
+    font-size: 2.5rem;
+    margin-left: 1.5rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.header .header-1 .icons div:hover,
+.header .header-1 .icons a:hover {
+    color: var(--dark-green);
+}
+
+.header .header-2 {
+
+    background: var(--green);
+    margin: auto;
+}
+
+
+
+.dropdown-menu {
+    z-index: 200002;
+
+}
+
+
+.navigation-bar {
+
+    z-index: 200000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user-drop ul li a {
+    font-size: var(--font-size);
+}
+
+.navigation-bar li,
+.user-drop li {
+    margin-bottom: 1.2rem;
+    margin-top: 1.2rem;
+    margin-left: 2rem;
+    font-size: var(--font-size);
+    position: relative;
+}
+
+.navigation-bar li::after,
+.user-drop li::after {
+    content: '';
+    height: .30rem;
+    width: 0;
+    background: var(--dark-green);
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.75s;
+}
+
+.navigation-bar ul li:hover::after,
+.user-drop ul li:hover::after {
+    color: var(--dark-green);
+    width: 100%;
+
+}
+
+.navigation-bar li a,
+.user-drop li a {
+    font-weight: var(--weight);
+    color: var(--dark-green);
+
+}
+
+.navigation-bar li a:hover,
+.user-drop li a:hover {
+    font-weight: var(--weight);
+    color: var(--dark-blue);
+
+}
+
+.navigation-bar li a:active,
+.user-drop li a:active {
+    color: white;
+}
+
+.home-sec {
+    padding-top: 16rem;
+    padding-bottom: 4rem;
+    background-color: var(--opacity-color);
+}
+
+.profile {
+
+    margin: 2rem;
+    padding: 2rem;
+}
+
+ul>.info-edit {
+    list-style: none;
+    font-size: var(--font-size);
+    color: var(--opacity-color);
+    font-weight: var(--weight);
+}
+
+.info-edit a {
+    color: rgba(0, 128, 0, 0.45);
+    text-decoration: none;
+}
+
+.info-edit a:hover {
+    color: var(--green);
+}
+
+.info-img {
+
+    position: relative;
+    margin: auto;
+
+}
+
+.info-img img {
+
+
+    position: relative;
+    top: auto;
+    left: auto;
+
+    width: 15rem;
+}
+
+.all-info {
+    border: 1px solid var(--dark-green);
+    z-index: 10;
+    margin: auto;
+    background-color: white;
+    border-radius: 1.5rem;
+    width: 70%;
+
+}
+
+.all-info>.row {
+    padding-top: 2rem;
+}
+
+.root {
+    color: var(--green);
+    font-size: 1rem;
+    font-weight: var(--weight);
+}
+
+.info {
+    padding-left: 10rem;
+    text-align: justify;
+    color: black;
+    font-size: 1rem;
+}
+
+
+hr {
+    color: var(--green);
+    height: .5rem;
+
+
+}
+
+.form-btn {
+    margin-top: 1rem;
+    width: 100%;
+    display: inline-block;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    border-radius: .5rem;
+    color: #fff;
+    background: var(--green);
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 500;
+
+}
+
+.form-btn:hover {
+    color: white;
+    background: var(--dark-green);
+}

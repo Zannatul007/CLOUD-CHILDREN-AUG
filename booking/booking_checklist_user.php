@@ -58,24 +58,86 @@ $query->execute();
 $result=$query->get_result();
 $row = $result->fetch_assoc();
 $query->close();
+?>
+
+
+<!--styling the table-->
+ <div class="home-sec">
+            <div class="container ">
+                <div class="row all-info">
+                    <div class="col-lg-4">
+                        <div class="row  profile">
+                            <div class="col-lg-12">
+                                <div class="info-img">
+                                    <img src="../images/company-logo-removebg-preview.png" alt="" srcset="">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="row">
+    
+                            <div class="col-lg-12 field">
+                                <div class="row">
+                                    <p class="root">Your Last booking ID is :<?php echo $row[0]?></p>
+                                    <div class="col-lg-3  root">Booking ID</div>
+                                    <div class="col-lg-9 info"><?php echo $row_prev['booking_id']; ?></div>
+                                    <hr>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 field">
+                                <div class="row">
+                                    <div class="col-lg-3  root">Day Care Center Name</div>
+                                    <div class="col-lg-9 info"><?php echo $row['dname']; ?></div>
+                                    <hr>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 field">
+                                <div class="row">
+                                    <div class="col-lg-3 root">Day Care Email Address</div>
+                                    <div class="col-lg-9 info"><?php echo $row_prev['demail'];?></div>
+                                    <hr>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 field">
+                                <div class="row">
+                                    <div class="col-lg-3 root">Phone Number </div>
+                                    <div class="col-lg-9 info"><?php echo $row['dnumber'];?></div>
+                                    <hr>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <button class="form-btn"> <?php echo $row_prev['confirmed'];?></button>
+                            </div>
+                            <div class="col-lg-4"></div>
+                            <div class="col-lg-4 ">
+                                <button class="form-btn"> Pending</button>
+                            </div>
+                        </div>
+                    </div>
+
+<!--ending it-->
+<?php
 //Show boking id
-echo $row_prev['booking_id'];
-echo '<br>';
-//Show daycare name
-echo $row['dname'];
-echo '<br>';
-//Show daycare email
-echo $row_prev['demail'];
-echo '<br>';
-//Show daycare number
-echo $row['dnumber'];
-echo '<br>';
-//Show daycare confirmed
-echo $row_prev['confirmed'];
-echo '<br>';
-}
+// echo $row_prev['booking_id'];
+// echo '<br>';
+// //Show daycare name
+// echo $row['dname'];
+// echo '<br>';
+// //Show daycare email
+// echo $row_prev['demail'];
+// echo '<br>';
+// //Show daycare number
+// echo $row['dnumber'];
+// echo '<br>';
+// //Show daycare confirmed
+// echo $row_prev['confirmed'];
+// echo '<br>';
+// }
 
 
 ?>
+<script src="../js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
