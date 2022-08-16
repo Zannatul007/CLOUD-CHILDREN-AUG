@@ -743,6 +743,72 @@ hr {
     text-decoration: none;
 }
 
+.footer-basic {
+    background-color: #121c52;
+    color: gray;
+    font-size: medium;
+
+
+}
+
+
+
+
+
+.fa-paper-plane {
+    color: gray;
+}
+
+.footer-basic {
+    padding: 3rem;
+
+    background-color: var(--green);
+}
+
+.footer-basic .company-name {
+    font-style: italic;
+    color: var(--dark-blue);
+    font-size: 2.5rem;
+    font-weight: var(--weight);
+    font-family: 'Pacifico', cursive;
+    transform: scale(1.1);
+}
+
+
+
+
+.footer-basic .list-head {
+    font-weight: var(--weight);
+    font-size: var(--font-size);
+    color: var(--dark-blue);
+}
+
+.footer-basic ul {
+
+    padding: 0;
+    list-style: none;
+    line-height: 1.6;
+    margin-bottom: 0;
+    color: var(--dark-green);
+    font-size: var(--font-size);
+}
+
+.footer-basic .cust:hover {
+    color: white;
+}
+
+
+.footer-link {
+    text-decoration: none;
+    font-size: var(--font-size);
+    color: var(--dark-green);
+}
+
+.footer-link:hover {
+    color: white;
+
+}
+
 @keyframes glowing {
     0% {
         background-color: var(--dark-blue);

@@ -35,6 +35,54 @@ require_once "../config.php";
 
 $booking_id=array();
 $k=-1;
+echo "Pending Bookings.";
+echo '<br>';
+$confirm="Pending";
+echo '<br>';
+$query=$mysqli->prepare("SELECT booking_id FROM booking_info WHERE demail=? AND confirmed=?");
+$query->bind_param("ss",$_SESSION['daycare-email'],$confirm);
+$query->execute();
+$result_prev=$query->get_result();
+$query->close();
+//Showing the details of Pending bookings
+while($row_prev = $result_prev->fetch_assoc()) 
+{
+ $k++; 
+ $booking_id[$k]=$row_prev['booking_id'];
+ echo $row_prev['booking_id'];
+ echo '<br>';
+ $o=(string)$row_prev['booking_id'].'_'."details";
+ ?>
+
+
+ <!---------------------See Details of bookings----------------->
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                
+<button class="btn-block btn-sm btn filter_status" type="submit"  name="<?php echo $o;?>">See Details</button>   
+</form> 
+<br>
+<?php
+$o=(string)$row_prev['booking_id'].'_'."confirm";
+?>
+<!---------------------Confirming the unconfirmed bookings----------------->
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                
+<button class="btn-block btn-sm btn filter_status" type="submit"  name="<?php echo $o;?>">Confirm</button>   
+</form> 
+<br>
+<?php
+$o=(string)$row_prev['booking_id'].'_'."unconfirm";
+?>
+<!---------------------Confirming the unconfirmed bookings----------------->
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                
+<button class="btn-block btn-sm btn filter_status" type="submit"  name="<?php echo $o;?>">Deny Confirm</button>   
+</form> 
+<br>
+
+<?php
+}
+//
 echo "Not Confirmed Bookings.";
 echo '<br>';
 $confirm="No";
@@ -59,6 +107,7 @@ while($row_prev = $result_prev->fetch_assoc())
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 
 <button class="btn-block btn-sm btn filter_status" type="submit"  name="<?php echo $o;?>">See Details</button>    
+</form>
 <br>
 <?php
 $o=(string)$row_prev['booking_id'].'_'."confirm";
@@ -95,7 +144,7 @@ while($row_prev = $result_prev->fetch_assoc())
                 
  <button class="btn-block btn-sm btn filter_status" type="submit"  name="<?php echo $o;?>">See Details</button>    
 
-
+</form>
 <br>
 <?php
 $o=(string)$row_prev['booking_id'].'_'."unconfirm";

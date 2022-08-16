@@ -16,7 +16,7 @@ session_start();
     <!--Customize css link-->
 
     <link rel="stylesheet" href="../css/form.css">
-    <link rel="stylesheet" href="../css/style_new.css">
+    <link rel="stylesheet" href="../css/categorywise.css">
 
 
     <!--Swiper cdn-->
@@ -122,7 +122,7 @@ if ($people != "") {
         </nav>
 
     </header>
-    <main class="container home-sec">
+    <main class="container home">
 
 
 
@@ -130,7 +130,8 @@ if ($people != "") {
         <!------------------------Showing Contents----------------->
         <!-----------------Booking for Toodler Section------------->
         <br>
-        <h1 class="bg-primary p-3 text-white" id="toddler">Toddler-section</h1>
+        <h1 class="heading" id="toddler"><span>Toddler section</span>
+        </h1>
         <?php
 
         $l = "";
@@ -174,118 +175,118 @@ if ($people != "") {
             //Card Design
             //Showing Daycare Name
         ?>
-            <div class="container">
-                <div class="row cat-card">
-                    <div class="col-lg-4">
-                        <div class="cat-img">
-                            <img class="img-thumbnail" src="../images/blogs/father-mother.jpg" alt="">
-                        </div>
+
+            <div class="row cat-card">
+                <div class="col-lg-4">
+                    <div class="cat-img">
+                        <img class="img-thumbnail" src="../images/blogs/father-mother.jpg" alt="">
                     </div>
-                    <div class="col-lg-8 ">
-                        <div class="row">
-                            <div class="col-lg-6"><span class="cat"><?php echo "Toddler"; ?></span>
-                                <span><span class="fa fa-star "></span>
-                                    <span class="fa fa-star "></span>
-                                    <span class="fa fa-star "></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                </span>
-                            </div>
-                            <div class="col-lg-6 cat-payment">BDT <span><?php echo $row_1["payment"]; ?></span></div>
-                            <div class="col-lg-12 cat-name">
-                                <?php echo $row_2["dname"]; ?>
-                            </div>
-                            <div class="col-lg-12 cat-dis">
-                                <i class="fa-solid fa-location-dot"></i><?php echo $row_2['district']; ?>
-                            </div>
-                            <div class="col-lg-12 cat-address">
-                                <i class="fa-solid fa-location-dot"></i><?php echo $row_2["dadress"]; ?>
-                            </div>
-                            <!-- <div class="col-lg-12 cat-time">
+                </div>
+                <div class="col-lg-8 ">
+                    <div class="row">
+                        <div class="col-lg-6"><span class="cat"><?php echo "Toddler"; ?></span>
+                            <span><span class="fa fa-star "></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </span>
+                        </div>
+                        <div class="col-lg-6 cat-payment">BDT <span><?php echo $row_1["payment"]; ?></span></div>
+                        <div class="col-lg-12 cat-name">
+                            <?php echo $row_2["dname"]; ?>
+                        </div>
+                        <div class="col-lg-12 cat-dis">
+                            <i class="fa-solid fa-location-dot"></i><?php echo $row_2['district']; ?>
+                        </div>
+                        <div class="col-lg-12 cat-address">
+                            <i class="fa-solid fa-location-dot"></i><?php echo $row_2["dadress"]; ?>
+                        </div>
+                        <!-- <div class="col-lg-12 cat-time">
                             Hours <span></span> To <span></span>
                         </div> -->
-                        </div>
-                        <form class="col-lg-3" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-
-                            <button class="btn form-btn filter_status" type="submit" name="<?php echo $o; ?>">See details</button>
-
-                        </form>
-
                     </div>
+                    <form class="col-lg-4 ms-auto" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 
+                        <button class="btn form-btn filter_status" type="submit" name="<?php echo $o; ?>">See details</button>
+
+                    </form>
 
                 </div>
 
 
-
-
-
-
-
-            <?php
-        } ?>
             </div>
-            <?php
-            //echo $row_2["dname"];
-            //Showing category
-            //echo "toodler";
-            //echo '<br>';
-            //echo '<br>';
-            //Showing Pament
-            //echo '<br>';
-            //echo $row_1["payment"];
-            //echo '<br>';
-            //Showing Daycare Adress
-            //echo $row_2["dadress"];
-            //echo '<br>';
-            //Showing district
-            //echo $row_2['district'];
-            //echo '<br>';?
-            ?>
 
 
 
-            <!---------------------See Details of DayCare----------------------------->
 
 
-            <br>
-            <br>
 
-            <h1 class="bg-primary text-white p-3" id="preschool">Preschool Section</h1>
-            <?php
-            //Preschool Section
 
-            $query = $mysqli->prepare("SELECT demail FROM category WHERE dcategory=?");
+        <?php
+        } ?>
+        </div>
+        <?php
+        //echo $row_2["dname"];
+        //Showing category
+        //echo "toodler";
+        //echo '<br>';
+        //echo '<br>';
+        //Showing Pament
+        //echo '<br>';
+        //echo $row_1["payment"];
+        //echo '<br>';
+        //Showing Daycare Adress
+        //echo $row_2["dadress"];
+        //echo '<br>';
+        //Showing district
+        //echo $row_2['district'];
+        //echo '<br>';?
+        ?>
+
+
+
+        <!---------------------See Details of DayCare----------------------------->
+
+
+        <br>
+        <br>
+
+        <h1 class="heading" id="preschool"><span> Preschool Section</span></h1>
+        <?php
+        //Preschool Section
+
+        $query = $mysqli->prepare("SELECT demail FROM category WHERE dcategory=?");
+        $cat = "preschool";
+        $query->bind_param("s", $cat);
+        $query->execute();
+
+        $result = $query->get_result();
+        $query->close();
+
+
+        while ($row = $result->fetch_assoc()) {
+
+            $k++;
+            $email[$k] = $row["demail"];
+            $o = (string)$k . "_" . "preschool";
+            $query = $mysqli->prepare("SELECT payment FROM category WHERE dcategory=? AND demail=?");
             $cat = "preschool";
-            $query->bind_param("s", $cat);
+            $query->bind_param("ss", $cat, $row["demail"]);
+            $email_ = $row["demail"];
             $query->execute();
-
-            $result = $query->get_result();
+            $result_1 = $query->get_result();
+            $row_1 = $result_1->fetch_assoc();
             $query->close();
 
-
-            while ($row = $result->fetch_assoc()) {
-
-                $k++;
-                $email[$k] = $row["demail"];
-                $o = (string)$k . "_" . "preschool";
-                $query = $mysqli->prepare("SELECT payment FROM category WHERE dcategory=? AND demail=?");
-                $cat = "preschool";
-                $query->bind_param("ss", $cat, $row["demail"]);
-                $email_ = $row["demail"];
-                $query->execute();
-                $result_1 = $query->get_result();
-                $row_1 = $result_1->fetch_assoc();
-                $query->close();
-
-                $query = $mysqli->prepare("SELECT dname,dadress,district FROM daycare_info WHERE demail=?");
-                $query->bind_param("s", $email_);
-                $query->execute();
-                $result_2 = $query->get_result();
-                $row_2 = $result_2->fetch_assoc();
-                $query->close();
-            ?>
-
+            $query = $mysqli->prepare("SELECT dname,dadress,district FROM daycare_info WHERE demail=?");
+            $query->bind_param("s", $email_);
+            $query->execute();
+            $result_2 = $query->get_result();
+            $row_2 = $result_2->fetch_assoc();
+            $query->close();
+        ?>
+            <div class="container">
                 <div class="row cat-card">
                     <div class="col-lg-4">
                         <div class="cat-img">
@@ -316,7 +317,7 @@ if ($people != "") {
                             Hours <span></span> To <span></span>
                         </div> -->
                         </div>
-                        <form class="col-lg-3" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                        <form class="col-lg-4 ms-auto" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 
                             <button class="btn form-btn filter_status" type="submit" name="<?php echo $o; ?>">See details</button>
 
@@ -326,331 +327,331 @@ if ($people != "") {
 
 
                 </div>
+            </div>
+        <?php
 
-            <?php
-
-            }
+        }
 
 
-            ?>
-            <br>
-            <h1 class="bg-primary p-3 text-white" id="schoolage">School Age</h1>
-            <?php
-            //School Age Section
-            $query = $mysqli->prepare("SELECT demail FROM category WHERE dcategory=?");
+        ?>
+        <br>
+        <h1 class="heading" id="schoolage"><span>School Age</span> </h1>
+        <?php
+        //School Age Section
+        $query = $mysqli->prepare("SELECT demail FROM category WHERE dcategory=?");
+        $cat = "schoolage";
+        $query->bind_param("s", $cat);
+        $query->execute();
+
+        $result = $query->get_result();
+        $query->close();
+
+
+        while ($row = $result->fetch_assoc()) {
+
+            $k++;
+            $email[$k] = $row["demail"];
+            $o = (string)$k . "_" . "schoolage";
+            $query = $mysqli->prepare("SELECT payment FROM category WHERE dcategory=? AND demail=?");
             $cat = "schoolage";
-            $query->bind_param("s", $cat);
+            $query->bind_param("ss", $cat, $row["demail"]);
+            $email_ = $row["demail"];
             $query->execute();
-
-            $result = $query->get_result();
+            $result_1 = $query->get_result();
+            $row_1 = $result_1->fetch_assoc();
             $query->close();
 
+            $query = $mysqli->prepare("SELECT dname,dadress,district FROM daycare_info WHERE demail=?");
+            $query->bind_param("s", $email_);
+            $query->execute();
+            $result_2 = $query->get_result();
+            $row_2 = $result_2->fetch_assoc();
+            $query->close();
+        ?>
 
-            while ($row = $result->fetch_assoc()) {
-
-                $k++;
-                $email[$k] = $row["demail"];
-                $o = (string)$k . "_" . "schoolage";
-                $query = $mysqli->prepare("SELECT payment FROM category WHERE dcategory=? AND demail=?");
-                $cat = "schoolage";
-                $query->bind_param("ss", $cat, $row["demail"]);
-                $email_ = $row["demail"];
-                $query->execute();
-                $result_1 = $query->get_result();
-                $row_1 = $result_1->fetch_assoc();
-                $query->close();
-
-                $query = $mysqli->prepare("SELECT dname,dadress,district FROM daycare_info WHERE demail=?");
-                $query->bind_param("s", $email_);
-                $query->execute();
-                $result_2 = $query->get_result();
-                $row_2 = $result_2->fetch_assoc();
-                $query->close();
-            ?>
-
-                <div class="row cat-card">
-                    <div class="col-lg-4">
-                        <div class="cat-img">
-                            <img class="img-thumbnail" src="../images/blogs/father-mother.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-8 ">
-                        <div class="row">
-                            <div class="col-lg-6"><span class="cat"><?php echo "School-Age"; ?></span>
-                                <span><span class="fa fa-star "></span>
-                                    <span class="fa fa-star "></span>
-                                    <span class="fa fa-star "></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                </span>
-                            </div>
-                            <div class="col-lg-6 cat-payment">BDT <span><?php echo $row_1["payment"]; ?>;</span></div>
-                            <div class="col-lg-12 cat-name">
-                                <?php echo $row_2["dname"]; ?>
-                            </div>
-                            <div class="col-lg-12 cat-dis">
-                                <i class="fa-solid fa-location-dot"></i><?php echo $row_2['district']; ?>
-                            </div>
-                            <div class="col-lg-12 cat-address">
-                                <i class="fa-solid fa-location-dot"></i><?php echo $row_2["dadress"]; ?>
-                            </div>
-                            <!-- <div class="col-lg-12 cat-time">
-                            Hours <span></span> To <span></span>
-                        </div> -->
-                        </div>
-
-
-                        <form class="col-lg-3" action=" <?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-
-                            <button class="form-btn btn-block btn-sm btn filter_status" type="submit" name="<?php echo $o; ?>">See details</button>
-
-                        </form>
+            <div class="row cat-card">
+                <div class="col-lg-4">
+                    <div class="cat-img">
+                        <img class="img-thumbnail" src="../images/blogs/father-mother.jpg" alt="">
                     </div>
                 </div>
+                <div class="col-lg-8 ">
+                    <div class="row">
+                        <div class="col-lg-6"><span class="cat"><?php echo "School-Age"; ?></span>
+                            <span><span class="fa fa-star "></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </span>
+                        </div>
+                        <div class="col-lg-6 cat-payment">BDT <span><?php echo $row_1["payment"]; ?>;</span></div>
+                        <div class="col-lg-12 cat-name">
+                            <?php echo $row_2["dname"]; ?>
+                        </div>
+                        <div class="col-lg-12 cat-dis">
+                            <i class="fa-solid fa-location-dot"></i><?php echo $row_2['district']; ?>
+                        </div>
+                        <div class="col-lg-12 cat-address">
+                            <i class="fa-solid fa-location-dot"></i><?php echo $row_2["dadress"]; ?>
+                        </div>
+                        <!-- <div class="col-lg-12 cat-time">
+                            Hours <span></span> To <span></span>
+                        </div> -->
+                    </div>
+
+
+                    <form class="col-lg-4 ms-auto" action=" <?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+
+                        <button class="form-btn btn-block btn-sm btn filter_status" type="submit" name="<?php echo $o; ?>">See details</button>
+
+                    </form>
+                </div>
+            </div>
 
 
 
 
-                <br>
-            <?php
-
-            }
-
-
-            ?>
             <br>
-            <br>
-            <h1 class="bg-primary text-white p-3" id="special">Special Child</h1>
-            <?php
-            //Special Child Section
-            $query = $mysqli->prepare("SELECT demail FROM category WHERE dcategory=?");
+        <?php
+
+        }
+
+
+        ?>
+        <br>
+        <br>
+        <h1 class="heading" id="special"><span> Special Child</span></h1>
+        <?php
+        //Special Child Section
+        $query = $mysqli->prepare("SELECT demail FROM category WHERE dcategory=?");
+        $cat = "special";
+        $query->bind_param("s", $cat);
+        $query->execute();
+        $result = $query->get_result();
+        $query->close();
+
+
+        while ($row = $result->fetch_assoc()) {
+
+            $k++;
+            $email[$k] = $row["demail"];
+            $o = (string)$k . "_" . "special";
+            $query = $mysqli->prepare("SELECT payment FROM category WHERE dcategory=? AND demail=?");
             $cat = "special";
-            $query->bind_param("s", $cat);
+            $query->bind_param("ss", $cat, $row["demail"]);
+            $email_ = $row["demail"];
             $query->execute();
-            $result = $query->get_result();
+            $result_1 = $query->get_result();
+            $row_1 = $result_1->fetch_assoc();
             $query->close();
 
+            $query = $mysqli->prepare("SELECT dname,dadress,district FROM daycare_info WHERE demail=?");
+            $query->bind_param("s", $email_);
+            $query->execute();
+            $result_2 = $query->get_result();
+            $row_2 = $result_2->fetch_assoc();
+            $query->close();
+        ?>
 
-            while ($row = $result->fetch_assoc()) {
-
-                $k++;
-                $email[$k] = $row["demail"];
-                $o = (string)$k . "_" . "special";
-                $query = $mysqli->prepare("SELECT payment FROM category WHERE dcategory=? AND demail=?");
-                $cat = "special";
-                $query->bind_param("ss", $cat, $row["demail"]);
-                $email_ = $row["demail"];
-                $query->execute();
-                $result_1 = $query->get_result();
-                $row_1 = $result_1->fetch_assoc();
-                $query->close();
-
-                $query = $mysqli->prepare("SELECT dname,dadress,district FROM daycare_info WHERE demail=?");
-                $query->bind_param("s", $email_);
-                $query->execute();
-                $result_2 = $query->get_result();
-                $row_2 = $result_2->fetch_assoc();
-                $query->close();
-            ?>
-
-                <div class="row cat-card">
-                    <div class="col-lg-4">
-                        <div class="cat-img">
-                            <img class="img-thumbnail" src="../images/blogs/father-mother.jpg" alt="">
-                        </div>
+            <div class="row cat-card">
+                <div class="col-lg-4">
+                    <div class="cat-img">
+                        <img class="img-thumbnail" src="../images/blogs/father-mother.jpg" alt="">
                     </div>
-                    <div class="col-lg-8 ">
-                        <div class="row">
-                            <div class="col-lg-6"><span class="cat"><?php echo "Special"; ?></span>
-                                <span><span class="fa fa-star "></span>
-                                    <span class="fa fa-star "></span>
-                                    <span class="fa fa-star "></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                </span>
-                            </div>
-                            <div class="col-lg-6 cat-payment">BDT <span><?php echo $row_1["payment"]; ?></span></div>
-                            <div class="col-lg-12 cat-name">
-                                <?php echo $row_2["dname"]; ?>
-                            </div>
-                            <div class="col-lg-12 cat-dis">
-                                <i class="fa-solid fa-location-dot"></i><?php echo $row_2['district']; ?>
-                            </div>
-                            <div class="col-lg-12 cat-address">
-                                <i class="fa-solid fa-location-dot"></i><?php echo $row_2["dadress"]; ?>
-                            </div>
-                            <!-- <div class="col-lg-12 cat-time">
+                </div>
+                <div class="col-lg-8 ">
+                    <div class="row">
+                        <div class="col-lg-6"><span class="cat"><?php echo "Special"; ?></span>
+                            <span><span class="fa fa-star "></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </span>
+                        </div>
+                        <div class="col-lg-6 cat-payment">BDT <span><?php echo $row_1["payment"]; ?></span></div>
+                        <div class="col-lg-12 cat-name">
+                            <?php echo $row_2["dname"]; ?>
+                        </div>
+                        <div class="col-lg-12 cat-dis">
+                            <i class="fa-solid fa-location-dot"></i><?php echo $row_2['district']; ?>
+                        </div>
+                        <div class="col-lg-12 cat-address">
+                            <i class="fa-solid fa-location-dot"></i><?php echo $row_2["dadress"]; ?>
+                        </div>
+                        <!-- <div class="col-lg-12 cat-time">
                             Hours <span></span> To <span></span>
                         </div> -->
-                        </div>
-                        <form class="col-lg-3" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-
-                            <button class="btn form-btn filter_status" type="submit" name="<?php echo $o; ?>">See details</button>
-
-                        </form>
-
                     </div>
+                    <form class="col-lg-4 ms-auto" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 
+                        <button class="btn form-btn filter_status" type="submit" name="<?php echo $o; ?>">See details</button>
+
+                    </form>
 
                 </div>
 
 
-                <!-------------------------Show Day Care Details--------------------------------->
-
-                <br>
-            <?php
-
-            }
+            </div>
 
 
-            ?>
+            <!-------------------------Show Day Care Details--------------------------------->
 
             <br>
-            <br>
-            <h1 class="bg-primary text-white p-3" id="foreigner">Foreigner Child</h1>
-            <?php
-            //Foreigner Section
-            $query = $mysqli->prepare("SELECT demail FROM category WHERE dcategory=?");
+        <?php
+
+        }
+
+
+        ?>
+
+        <br>
+        <br>
+        <h1 class="heading" id="foreigner"><span> Foreigner Child</span></h1>
+        <?php
+        //Foreigner Section
+        $query = $mysqli->prepare("SELECT demail FROM category WHERE dcategory=?");
+        $cat = "foreigner";
+        $query->bind_param("s", $cat);
+        $query->execute();
+        $result = $query->get_result();
+        $query->close();
+
+        //$row = $result->fetch_array(MYSQLI_NUM);
+        while ($row = $result->fetch_assoc()) {
+            //echo "email: " . $row["demail"]. " - payment: " . $row["payment"]. "- necessary_info " . $row["necessary_info"]. "<br>";
+            $k++;
+            $email[$k] = $row["demail"];
+            $o = (string)$k . "_" . "foreigner";
+            $query = $mysqli->prepare("SELECT payment FROM category WHERE dcategory=? AND demail=?");
             $cat = "foreigner";
-            $query->bind_param("s", $cat);
+            $query->bind_param("ss", $cat, $row["demail"]);
+            $email_ = $row["demail"];
             $query->execute();
-            $result = $query->get_result();
+            $result_1 = $query->get_result();
+            $row_1 = $result_1->fetch_assoc();
             $query->close();
 
-            //$row = $result->fetch_array(MYSQLI_NUM);
-            while ($row = $result->fetch_assoc()) {
-                //echo "email: " . $row["demail"]. " - payment: " . $row["payment"]. "- necessary_info " . $row["necessary_info"]. "<br>";
-                $k++;
-                $email[$k] = $row["demail"];
-                $o = (string)$k . "_" . "foreigner";
-                $query = $mysqli->prepare("SELECT payment FROM category WHERE dcategory=? AND demail=?");
-                $cat = "foreigner";
-                $query->bind_param("ss", $cat, $row["demail"]);
-                $email_ = $row["demail"];
-                $query->execute();
-                $result_1 = $query->get_result();
-                $row_1 = $result_1->fetch_assoc();
-                $query->close();
-
-                $query = $mysqli->prepare("SELECT dname,dadress,district FROM daycare_info WHERE demail=?");
-                $query->bind_param("s", $email_);
-                $query->execute();
-                $result_2 = $query->get_result();
-                $row_2 = $result_2->fetch_assoc();
-                $query->close();
+            $query = $mysqli->prepare("SELECT dname,dadress,district FROM daycare_info WHERE demail=?");
+            $query->bind_param("s", $email_);
+            $query->execute();
+            $result_2 = $query->get_result();
+            $row_2 = $result_2->fetch_assoc();
+            $query->close();
 
 
-            ?>
+        ?>
 
-                <!--------------------------------Showing Day Care Details--------------->
+            <!--------------------------------Showing Day Care Details--------------->
 
-                <div class="row cat-card">
-                    <div class="col-lg-4">
-                        <div class="cat-img">
-                            <img class="img-thumbnail" src="../images/blogs/father-mother.jpg" alt="">
-                        </div>
+            <div class="row cat-card">
+                <div class="col-lg-4">
+                    <div class="cat-img">
+                        <img class="img-thumbnail" src="../images/blogs/father-mother.jpg" alt="">
                     </div>
-                    <div class="col-lg-8 ">
-                        <div class="row">
-                            <div class="col-lg-6"><span class="cat"><?php echo "Foreigner"; ?></span>
-                                <span><span class="fa fa-star "></span>
-                                    <span class="fa fa-star "></span>
-                                    <span class="fa fa-star "></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                </span>
-                            </div>
-                            <div class="col-lg-6 cat-payment">BDT <span><?php echo $row_1["payment"]; ?></span></div>
-                            <div class="col-lg-12 cat-name">
-                                <?php echo $row_2["dname"]; ?>
-                            </div>
-                            <div class="col-lg-12 cat-dis">
-                                <i class="fa-solid fa-location-dot"></i><?php echo $row_2['district']; ?>
-                            </div>
-                            <div class="col-lg-12 cat-address">
-                                <i class="fa-solid fa-location-dot"></i><?php echo $row_2["dadress"]; ?>
-                            </div>
-                            <!-- <div class="col-lg-12 cat-time">
+                </div>
+                <div class="col-lg-8 ">
+                    <div class="row">
+                        <div class="col-lg-6"><span class="cat"><?php echo "Foreigner"; ?></span>
+                            <span><span class="fa fa-star "></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </span>
+                        </div>
+                        <div class="col-lg-6 cat-payment">BDT <span><?php echo $row_1["payment"]; ?></span></div>
+                        <div class="col-lg-12 cat-name">
+                            <?php echo $row_2["dname"]; ?>
+                        </div>
+                        <div class="col-lg-12 cat-dis">
+                            <i class="fa-solid fa-location-dot"></i><?php echo $row_2['district']; ?>
+                        </div>
+                        <div class="col-lg-12 cat-address">
+                            <i class="fa-solid fa-location-dot"></i><?php echo $row_2["dadress"]; ?>
+                        </div>
+                        <!-- <div class="col-lg-12 cat-time">
                             Hours <span></span> To <span></span>
                         </div> -->
-                        </div>
-                        <form class="col-lg-3" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-
-                            <button class="btn form-btn filter_status" type="submit" name="<?php echo $o; ?>">See details</button>
-
-                        </form>
-
                     </div>
+                    <form class="col-lg-4 ms-auto" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 
+                        <button class="btn form-btn filter_status" type="submit" name="<?php echo $o; ?>">See details</button>
+
+                    </form>
 
                 </div>
 
-                <br>
-            <?php
 
-            }
-
-
-            //Going to Daycare Page if submitted
-
-            for ($d = 0; $d < sizeof($email); $d++) {
-                //Toodler
-                if (isset($_POST[(string)$d . "_" . "toodler"])) {
-
-                    $daycare_email = $email[$d];
-                    $_SESSION['daycare-email'] = $daycare_email;
-                    $_SESSION['category'] = "toodler";
-
-                    echo '<script>window.location.href = "daycarepage.php"</script>';
-                }
-                //Preschool
-                if (isset($_POST[(string)$d . "_" . "preschool"])) {
-
-                    $daycare_email = $email[$d];
-                    $_SESSION['daycare-email'] = $daycare_email;
-                    $_SESSION['category'] = "preschool";
-
-                    echo '<script>window.location.href = "daycarepage.php"</script>';
-                }
-                //Schoolage
-
-                if (isset($_POST[(string)$d . "_" . "schoolage"])) {
-
-                    $daycare_email = $email[$d];
-                    $_SESSION['daycare-email'] = $daycare_email;
-                    $_SESSION['category'] = "schoolage";
-
-
-                    echo '<script>window.location.href = "daycarepage.php"</script>';
-                }
-                //Special
-                if (isset($_POST[(string)$d . "_" . "special"])) {
-
-                    $daycare_email = $email[$d];
-                    $_SESSION['daycare-email'] = $daycare_email;
-                    $_SESSION['category'] = "special";
-
-
-                    echo '<script>window.location.href = "daycarepage.php"</script>';
-                }
-
-                //Foreigner
-                if (isset($_POST[(string)$d . "_" . "foreigner"])) {
-
-                    $daycare_email = $email[$d];
-                    $_SESSION['daycare-email'] = $daycare_email;
-                    $_SESSION['category'] = "foreigner";
-
-
-                    echo '<script>window.location.href = "daycarepage.php"</script>';
-                }
-            }
-            ?>
-            </div>
             </div>
 
+            <br>
+        <?php
 
-            <script src="../js/bootstrap.bundle.min.js"></script>
+        }
+
+
+        //Going to Daycare Page if submitted
+
+        for ($d = 0; $d < sizeof($email); $d++) {
+            //Toodler
+            if (isset($_POST[(string)$d . "_" . "toodler"])) {
+
+                $daycare_email = $email[$d];
+                $_SESSION['daycare-email'] = $daycare_email;
+                $_SESSION['category'] = "toodler";
+
+                echo '<script>window.location.href = "daycarepage.php"</script>';
+            }
+            //Preschool
+            if (isset($_POST[(string)$d . "_" . "preschool"])) {
+
+                $daycare_email = $email[$d];
+                $_SESSION['daycare-email'] = $daycare_email;
+                $_SESSION['category'] = "preschool";
+
+                echo '<script>window.location.href = "daycarepage.php"</script>';
+            }
+            //Schoolage
+
+            if (isset($_POST[(string)$d . "_" . "schoolage"])) {
+
+                $daycare_email = $email[$d];
+                $_SESSION['daycare-email'] = $daycare_email;
+                $_SESSION['category'] = "schoolage";
+
+
+                echo '<script>window.location.href = "daycarepage.php"</script>';
+            }
+            //Special
+            if (isset($_POST[(string)$d . "_" . "special"])) {
+
+                $daycare_email = $email[$d];
+                $_SESSION['daycare-email'] = $daycare_email;
+                $_SESSION['category'] = "special";
+
+
+                echo '<script>window.location.href = "daycarepage.php"</script>';
+            }
+
+            //Foreigner
+            if (isset($_POST[(string)$d . "_" . "foreigner"])) {
+
+                $daycare_email = $email[$d];
+                $_SESSION['daycare-email'] = $daycare_email;
+                $_SESSION['category'] = "foreigner";
+
+
+                echo '<script>window.location.href = "daycarepage.php"</script>';
+            }
+        }
+        ?>
+        </div>
+        </div>
+
+
+        <script src="../js/bootstrap.bundle.min.js"></script>
 
 </body>
 
