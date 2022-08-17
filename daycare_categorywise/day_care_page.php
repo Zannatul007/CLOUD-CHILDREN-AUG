@@ -20,6 +20,8 @@ session_start();
 
     <!--Swiper cdn-->
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../css/footer.css">
+
     <link rel="stylesheet" href="../css/swiper.css">
 
     <!-- Link Swiper's CSS -->
@@ -398,6 +400,54 @@ session_start();
 
 
     </div>
+
+    <footer class="footer-basic ">
+        <div class="row row-cols-lg-5 row-cols-md-3 row-cols-2">
+            <div class="col company-name">Children Cloud</div>
+            <div class="col">
+                <ul>
+                    <li class="list-head">Customers</li>
+                    <li class="cust">Day care center</li>
+                    <li class="cust">Public</li>
+                </ul>
+            </div>
+            <div class="col">
+                <ul>
+                    <li class="list-head">Services</li>
+                    <li><a class="footer-link" href="#about">
+                            Home</a>
+                    </li>
+                    <li>
+                        <a class="footer-link" href="parenting_blogs/blogs_home.html">Parenting Blog</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="col">
+                <ul>
+                    <li class="list-head">Further Information</li>
+                    <li><a class="footer-link" href="../terms_condition.html">Terms and condition</a>
+                    </li>
+                    <li><a class="footer-link" href="../privacy_policy.html">Privacy policy</a></li>
+                    <li><a class="footer-link" href="contact_us.html">Contact Us</a></li>
+
+                </ul>
+            </div>
+            <div class="col">
+                <div class="list-head">Follow Us</div>
+
+                <div class="row row-cols-lg-3 row-cols-3 row-cols-md-3">
+                    <div class="col"><i class="fa-brands fa-facebook-square"></i></div>
+                    <div class="col"><i class="fa-solid fa-paper-plane"></i></div>
+                    <div class="col"><i class="fa-brands fa-instagram-square"></i></div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </footer>
 
 
 
