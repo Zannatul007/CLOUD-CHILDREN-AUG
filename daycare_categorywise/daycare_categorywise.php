@@ -28,7 +28,7 @@ session_start();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 
     <!-- font awesome cdn link  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!--comapny logo font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,11 +54,18 @@ if ($daycare != "") {
 if ($people != "") {
     $userlogged = $people;
 }
+$path    = '../images/blogs';
+// $files = scandir($path);
+$files = array_diff(scandir($path), array('.', '..'));
+
+
+
 
 ?>
 
 
 <body>
+
 
     <!-- navigation bar -->
     <!--navigation Bar-->
@@ -94,23 +101,23 @@ if ($people != "") {
                         </a>
                         <ul class="dropdown-menu" id="dropmenu" aria-labelledby="navbarDropdown">
 
-                            <li><a class="dropdown-item" href="#">Toddler</a></li>
+                            <li><a class="dropdown-item" href="#toddler">Toddler</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Pre-School</a></li>
+                            <li><a class="dropdown-item" href="#preschool">Pre-School</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">School-Age</a></li>
+                            <li><a class="dropdown-item" href="#schoolage">School-Age</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Special-Child</a></li>
+                            <li><a class="dropdown-item" href="#special">Special-Child</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Foreigner-Child</a></li>
+                            <li><a class="dropdown-item" href="#foreigner">Foreigner-Child</a></li>
                         </ul>
                     </li>
 
@@ -180,17 +187,42 @@ if ($people != "") {
             <div class="row cat-card">
                 <div class="col-lg-4">
                     <div class="cat-img">
-                        <img class="img-thumbnail" src="../images/blogs/father-mother.jpg" alt="">
+                        <?php
+                        $dir = "../images/blogs/" . $files[array_rand($files)];
+
+                        ?>
+                        <img class="img-thumbnail" src=<?php echo $dir ?> alt="">
                     </div>
                 </div>
                 <div class="col-lg-8 ">
                     <div class="row">
                         <div class="col-lg-6"><span class="cat"><?php echo "Toddler"; ?></span>
-                            <span><span class="fa fa-star "></span>
-                                <span class="fa fa-star "></span>
-                                <span class="fa fa-star "></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
+
+                            <?php
+
+                            $query = $mysqli->prepare("SELECT rating FROM daycare_info WHERE demail=?");
+                            $query->bind_param("s", $row["demail"]);
+                            $query->execute();
+                            $result_rating = $query->get_result();
+                            $row_rating = $result_rating->fetch_assoc();
+                            $query->close();
+                            $p = $row_rating['rating'];
+                            ?>
+
+                            <span>
+                                <?php
+                                for ($j = 1; $j <= $p; $j++) {
+                                ?>
+                                    <span style="color:yellow" class="fa fa-star checked"></span>
+                                <?php
+                                }
+                                for ($d = 1; $d <= 5 - $p; $d++) {
+                                ?>
+                                    <span style="color:black" class="fa fa-star "></span>
+                                <?php
+                                }
+                                ?>
+
                             </span>
                         </div>
                         <div class="col-lg-6 cat-payment">BDT <span><?php echo $row_1["payment"]; ?></span></div>
@@ -291,17 +323,49 @@ if ($people != "") {
                 <div class="row cat-card">
                     <div class="col-lg-4">
                         <div class="cat-img">
-                            <img class="img-thumbnail" src="../images/blogs/father-mother.jpg" alt="">
+                            <?php
+                            $dir = "../images/blogs/" . $files[array_rand($files)];
+
+                            ?>
+                            <img class="img-thumbnail" src=<?php echo $dir ?> alt="">
                         </div>
                     </div>
                     <div class="col-lg-8 ">
                         <div class="row">
                             <div class="col-lg-6"><span class="cat"><?php echo "Pre-School"; ?></span>
-                                <span><span class="fa fa-star "></span>
-                                    <span class="fa fa-star "></span>
-                                    <span class="fa fa-star "></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
+                                <?php
+
+                                $query = $mysqli->prepare("SELECT rating FROM daycare_info WHERE demail=?");
+                                $query->bind_param("s", $row["demail"]);
+                                $query->execute();
+                                $result_rating = $query->get_result();
+                                $row_rating = $result_rating->fetch_assoc();
+                                $query->close();
+                                $p = $row_rating['rating'];
+                                ?>
+                                <?php
+
+                                $query = $mysqli->prepare("SELECT rating FROM daycare_info WHERE demail=?");
+                                $query->bind_param("s", $row["demail"]);
+                                $query->execute();
+                                $result_rating = $query->get_result();
+                                $row_rating = $result_rating->fetch_assoc();
+                                $query->close();
+                                $p = $row_rating['rating'];
+                                ?>
+                                <span>
+                                    <?php
+                                    for ($j = 1; $j <= $p; $j++) {
+                                    ?>
+                                        <span style="color:yellow" class="fa fa-star checked"></span>
+                                    <?php
+                                    }
+                                    for ($d = 1; $d <= 5 - $p; $d++) {
+                                    ?>
+                                        <span style="color:black" class="fa fa-star "></span>
+                                    <?php
+                                    }
+                                    ?>
                                 </span>
                             </div>
                             <div class="col-lg-6 cat-payment">BDT <span><?php echo $row_1["payment"]; ?></span></div>
@@ -373,17 +437,38 @@ if ($people != "") {
             <div class="row cat-card">
                 <div class="col-lg-4">
                     <div class="cat-img">
-                        <img class="img-thumbnail" src="../images/blogs/father-mother.jpg" alt="">
+                        <?php
+                        $dir = "../images/blogs/" . $files[array_rand($files)];
+
+                        ?>
+                        <img class="img-thumbnail" src=<?php echo $dir ?> alt="">
                     </div>
                 </div>
                 <div class="col-lg-8 ">
                     <div class="row">
                         <div class="col-lg-6"><span class="cat"><?php echo "School-Age"; ?></span>
-                            <span><span class="fa fa-star "></span>
-                                <span class="fa fa-star "></span>
-                                <span class="fa fa-star "></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
+                            <?php
+
+                            $query = $mysqli->prepare("SELECT rating FROM daycare_info WHERE demail=?");
+                            $query->bind_param("s", $row["demail"]);
+                            $query->execute();
+                            $result_rating = $query->get_result();
+                            $row_rating = $result_rating->fetch_assoc();
+                            $query->close();
+                            $p = $row_rating['rating'];
+                            ?>
+                            <span><?php
+                                    for ($j = 1; $j <= $p; $j++) {
+                                    ?>
+                                    <span style="color:yellow" class="fa fa-star checked"></span>
+                                <?php
+                                    }
+                                    for ($d = 1; $d <= 5 - $p; $d++) {
+                                ?>
+                                    <span style="color:black" class="fa fa-star "></span>
+                                <?php
+                                    }
+                                ?>
                             </span>
                         </div>
                         <div class="col-lg-6 cat-payment">BDT <span><?php echo $row_1["payment"]; ?>;</span></div>
@@ -458,17 +543,38 @@ if ($people != "") {
             <div class="row cat-card">
                 <div class="col-lg-4">
                     <div class="cat-img">
-                        <img class="img-thumbnail" src="../images/blogs/father-mother.jpg" alt="">
+                        <?php
+                        $dir = "../images/blogs/" . $files[array_rand($files)];
+
+                        ?>
+                        <img class="img-thumbnail" src=<?php echo $dir ?> alt="">
                     </div>
                 </div>
                 <div class="col-lg-8 ">
                     <div class="row">
                         <div class="col-lg-6"><span class="cat"><?php echo "Special"; ?></span>
-                            <span><span class="fa fa-star "></span>
-                                <span class="fa fa-star "></span>
-                                <span class="fa fa-star "></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
+                            <?php
+
+                            $query = $mysqli->prepare("SELECT rating FROM daycare_info WHERE demail=?");
+                            $query->bind_param("s", $row["demail"]);
+                            $query->execute();
+                            $result_rating = $query->get_result();
+                            $row_rating = $result_rating->fetch_assoc();
+                            $query->close();
+                            $p = $row_rating['rating'];
+                            ?>
+                            <span><?php
+                                    for ($j = 1; $j <= $p; $j++) {
+                                    ?>
+                                    <span style="color:yellow" class="fa fa-star checked"></span>
+                                <?php
+                                    }
+                                    for ($d = 1; $d <= 5 - $p; $d++) {
+                                ?>
+                                    <span style="color:black" class="fa fa-star "></span>
+                                <?php
+                                    }
+                                ?>
                             </span>
                         </div>
                         <div class="col-lg-6 cat-payment">BDT <span><?php echo $row_1["payment"]; ?></span></div>
@@ -549,17 +655,38 @@ if ($people != "") {
             <div class="row cat-card">
                 <div class="col-lg-4">
                     <div class="cat-img">
-                        <img class="img-thumbnail" src="../images/blogs/father-mother.jpg" alt="">
+                        <?php
+                        $dir = "../images/blogs/" . $files[array_rand($files)];
+
+                        ?>
+                        <img class="img-thumbnail" src=<?php echo $dir ?> alt="">
                     </div>
                 </div>
                 <div class="col-lg-8 ">
                     <div class="row">
                         <div class="col-lg-6"><span class="cat"><?php echo "Foreigner"; ?></span>
-                            <span><span class="fa fa-star "></span>
-                                <span class="fa fa-star "></span>
-                                <span class="fa fa-star "></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
+                            <?php
+
+                            $query = $mysqli->prepare("SELECT rating FROM daycare_info WHERE demail=?");
+                            $query->bind_param("s", $row["demail"]);
+                            $query->execute();
+                            $result_rating = $query->get_result();
+                            $row_rating = $result_rating->fetch_assoc();
+                            $query->close();
+                            $p = $row_rating['rating'];
+                            ?>
+                            <span><?php
+                                    for ($j = 1; $j <= $p; $j++) {
+                                    ?>
+                                    <span style="color:yellow" class="fa fa-star checked"></span>
+                                <?php
+                                    }
+                                    for ($d = 1; $d <= 5 - $p; $d++) {
+                                ?>
+                                    <span style="color:black" class="fa fa-star "></span>
+                                <?php
+                                    }
+                                ?>
                             </span>
                         </div>
                         <div class="col-lg-6 cat-payment">BDT <span><?php echo $row_1["payment"]; ?></span></div>
@@ -652,44 +779,69 @@ if ($people != "") {
         </div>
 
         <footer class="footer-basic ">
-            <div class="row row-cols-lg-5 row-cols-md-3 row-cols-2">
-                <div class="col company-name">Children Cloud</div>
-                <div class="col">
+            <div class="row d-flex">
+                <div class="col-2 company-name">Children Cloud</div>
+                <div class="col-1">
                     <ul>
                         <li class="list-head">Customers</li>
                         <li class="cust">Day care center</li>
                         <li class="cust">Public</li>
                     </ul>
                 </div>
-                <div class="col">
+                <div class="col-2">
                     <ul>
-                        <li class="list-head">Services</li>
+                        <li class="list-head">Quick Links</li>
                         <li><a class="footer-link" href="#about">
                                 Home</a>
                         </li>
                         <li>
+                            <a href="" class="footer-link"></a>
+                        </li>
+                        <li>
                             <a class="footer-link" href="parenting_blogs/blogs_home.html">Parenting Blog</a>
                         </li>
-
-                    </ul>
-                </div>
-                <div class="col">
-                    <ul>
-                        <li class="list-head">Further Information</li>
-                        <li><a class="footer-link" href="../terms_condition.html">Terms and condition</a>
+                        <li>
+                            <a href="daycare_categorywise\daycare_categorywise.php" class="footer-link">Day Care
+                                Categories</a>
                         </li>
-                        <li><a class="footer-link" href="../privacy_policy.html">Privacy policy</a></li>
-                        <li><a class="footer-link" href="contact_us.html">Contact Us</a></li>
 
                     </ul>
                 </div>
-                <div class="col">
+                <div class="col-2">
+                    <ul>
+                        <li class="list-head">Contributor</li>
+                        <li><a class="footer-link" href="https://www.linkedin.com/in/nidita-roy-0537b31b0/"></i>Nidita
+                                Roy</a>
+                        </li>
+                        <li><a class="footer-link" href="https://www.linkedin.com/in/zannatul-fardaush-tripty-8481241b2/">Zannatul Fardaush
+                                Tripty</a></li>
+                        <li><a class="footer-link" href="https://www.linkedin.com/in/rowshon-akter-roshni-a547461a6/">Rowshon
+                                Akter Roshni</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="col-3">
+                    <div class="list-head">Contact Info
+                        <ul>
+                            <li class="footer-link"><span><i class="fa-solid fa-envelope"></i>
+                                    u1804018@student.cuet.ac.bd</span>
+                            </li>
+                            <li class="footer-link"><i class="fa-solid fa-envelope"></i> u1804030@student.cuet.ac.bd
+                            </li>
+                            <li class="footer-link"><i class="fa-solid fa-envelope"></i> u1804003@student.cuet.ac.bd
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-2">
                     <div class="list-head">Follow Us</div>
 
                     <div class="row row-cols-lg-3 row-cols-3 row-cols-md-3">
-                        <div class="col"><i class="fa-brands fa-facebook-square"></i></div>
-                        <div class="col"><i class="fa-solid fa-paper-plane"></i></div>
-                        <div class="col"><i class="fa-brands fa-instagram-square"></i></div>
+                        <div class="col"><i class="footer-link fa-brands fa-facebook-square"></i></div>
+                        <div class="col"><i class="footer-link fa-solid fa-paper-plane"></i></div>
+                        <div class="col"><i class="footer-link fa-brands fa-instagram-square"></i></div>
 
 
                     </div>

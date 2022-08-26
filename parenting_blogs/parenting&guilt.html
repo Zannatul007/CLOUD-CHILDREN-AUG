@@ -4,212 +4,393 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,400&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <script src="https://kit.fontawesome.com/bc867c7232.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--Swiper css-->
+    <!--Bootstrap Link-->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+    <!--Customize css link-->
+    <link rel="stylesheet" href="../css/style_new.css">
+
+    <!--Swiper cdn-->
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="../css/swiper.css">
-    <!---->
 
-    <link rel="stylesheet" href="../customize-styles/home.css">
-    <link rel="stylesheet" href="../css/footer.css">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <title>Parenting blogs</title>
+    <!--comapny logo font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:ital,wght@0,300;0,400;0,500;1,400&display=swap"
+        rel="stylesheet">
+
+    <title>Children-Cloud</title>
 </head>
 
 <body>
-    <header>
-        <!-- navigation bar  -->
-        <div class="container mb-5">
-            <nav class="navbar fixed-top navbar-expand-lg ">
 
-                <a class="link navbar-brand" href="#">Children-cloud</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse " id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="link nav-link active" aria-current="page" href="../index.html">Home</a>
-                        </li>
+    <header class="header container-fluid">
+        <section class="header-in">
+            <div class="header-1">
+                <div id="company-logo"><img src="../images/company-logo-removebg-preview.png" alt="">
+                    <a href="#"> Cloud
+                        Children </a>
+                </div>
+                <div class="icons">
+                    <div id="login-btn" class="fas fa-user"></div>
+                </div>
+            </div>
 
-                        <!-- <li class="nav-item">
-                            <a class="link nav-link" href="#about">About</a>
-                        </li> -->
-                        <li class="nav-item">
-                            <a class="link nav-link" href="#services">Services</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="link nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Child-Care Categories
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <!--navigation Bar-->
+            <div class="container-fluid">
+                <nav class="header-2 navigation-bar navbar navbar-expand-lg">
 
-                                <li><a class="dropdown-item" href="#">Toddler</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Pre-School</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">School-Age</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Special-Child</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Foreigner-Child</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="link nav-link" href="">Parenting-Guide</a>
-                        </li>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarScroll">
+                        <ul class="navbar-nav me-auto  ms-auto my-2 my-lg-0 navbar-nav-scroll"
+                            style="--bs-scroll-height: 100px;">
+                            <!-- <li><a href="#home" class="nav-link">Home</a></li>
+                            <li><a href="#about" class="nav-link">About Us</a></li>
+                            <li><a href="#services" class="nav-link">Services</a></li> -->
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="user-dropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fa-solid fa-circle-user"></i>
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="user-dropdown">
-                                <li><a class="dropdown-item" href="../login-page.html">Log In</a></li>
-                                <hr>
-                                <li><a class="dropdown-item" href="../register-page.html">Register</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-            </nav>
-        </div>
+                            <li class="nav-item dropdown">
+                                <a class="link nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Child-Care Categories
+                                </a>
+                                <ul class="dropdown-menu" id="dropmenu" aria-labelledby="navbarDropdown">
 
-        <br>
-        <br>
-        <!-- Ending navigation bar -->
-        <div class="mx-5 my-5 row ">
-            <div class="col-lg-9 ">
+                                    <li><a class="dropdown-item" href="#">Toddler</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Pre-School</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">School-Age</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Special-Child</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Foreigner-Child</a></li>
+                                </ul>
+                            </li>
+
+
+                            <li><a href="#parenting-blogs" class="nav-link">Parenting-Guides</a></li>
+                        </ul>
+
+                    </div>
+
+                </nav>
+            </div>
+
+        </section>
+    </header>
+    <main>
+
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-10 ">
                 <div class="row">
-                    <div class="col-lg-12"><img class="img-thumbnail" src="../images/blogs/guilt-mother.jpg" alt=""
-                            srcset=""></div>
                     <div class="col-lg-12">
-                        <p class="container">
-                        <div class="h2">Parenting and Guilt</div>
-
-                        As a parent, we all have certain moments in our lives that we don't want to remember or can say
-                        if we had the power to
-                        go back and change the actions of those moments. It could be the moment when you give your baby
-                        a good scrub for the
-                        first time and that first baby cries as a result, maybe you have to go to the emergency room
-                        because you didn't take a
-                        medicine while you were in a rush, or something like that. You have now overcome the
-                        consequences of the unintentional
-                        actions you did in those moments and they have faded a bit in your memory but you couldn't erase
-                        a small guilt.
-                        Although we know that we all make mistakes, many people think that some mistakes made at that
-                        moment may have opened the
-                        way for children to see me as a bad parent. Maybe if the child is angry or neglectful for some
-                        reason, we think that the
-                        neglect may have been born from that mistake. When these words come to our mind, perhaps my
-                        responsibility as a parent
-                        to myself is not done properly, but it is more important. That is why we need to know how we can
-                        get rid of these guilt
-                        feelings.
+                        <div class="blog-img">
+                            <img src="../images/blogs/guilt-mother.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-12 blog-content conatiner">
+                        <h1 class="heading my-5"><span>
+                                Parenting & Guilt</span></h1>
+                        <p>As a parent, we all have certain moments in our lives that we don't want to remember or can
+                            say if we had the power to go back and change the actions of those moments. It could be the
+                            moment when you give your baby a good scrub
+                            for the first time and that first baby cries as a result, maybe you have to go to the
+                            emergency room because you didn't take a medicine while you were in a rush, or something
+                            like that. You have now overcome the consequences
+                            of the unintentional actions you did in those moments and they have faded a bit in your
+                            memory but you couldn't erase a small guilt. Although we know that we all make mistakes,
+                            many people think that some mistakes made at that
+                            moment may have opened the way for children to see me as a bad parent. Maybe if the child is
+                            angry or neglectful for some reason, we think that the neglect may have been born from that
+                            mistake. When these words come to our
+                            mind, perhaps my responsibility as a parent to myself is not done properly, but it is more
+                            important. That is why we need to know how we can get rid of these guilt feelings.
 
                         <div class="h4">Worry about the future</div>
                         <p>
                             All of us at one time or another are angry with our children and then maybe do something
-                            that we
-                            as a parent probably
-                            shouldn't do. According to some child psychologists, we actually do crazy things because we
-                            think that if we don't
-                            correct a child's behavior now, he will continue to do the same behavior when he grows up,
-                            which
-                            is harmful for his
-                            future. We wonder what if he never learns to do it right? What if he can't do anything in
-                            the
-                            future? These fears are
-                            actually present in all of us, but if we exceed a certain level, we need to look at it
-                            because
-                            fear can often hinder us
-                            from making the right decisions. A child's brain matures around the age of 25, so if a child
-                            makes a mistake at the age
-                            of 10, there is no need to assume that he will continue to make the same mistake for the
-                            rest of
-                            his life.
+                            that we as a parent probably shouldn't do. According to some child psychologists, we
+                            actually do crazy things because we think that if we don't correct a child's
+                            behavior now, he will continue to do the same behavior when he grows up, which is harmful
+                            for his future. We wonder what if he never learns to do it right? What if he can't do
+                            anything in the future? These fears are actually
+                            present in all of us, but if we exceed a certain level, we need to look at it because fear
+                            can often hinder us from making the right decisions. A child's brain matures around the age
+                            of 25, so if a child makes a mistake
+                            at the age of 10, there is no need to assume that he will continue to make the same mistake
+                            for the rest of his life.
                         </p>
 
                         <div class="h4">Forgive yourself</div>
                         <p>none of us are above mistakes and it is true that a mistake about a child hurts the child the
-                            most but there is no point
-                            in sitting on a mistake. What a parent should do is put the mistake aside and think about
-                            how to correct it. If there is
-                            any negative emotion growing in the child then he will start to understand that my guardian
-                            has the power to call wrong
-                            and right and he should follow it.</p>
+                            most but there is no point in sitting on a mistake. What a parent should do is put the
+                            mistake aside and think about how to correct
+                            it. If there is any negative emotion growing in the child then he will start to understand
+                            that my guardian has the power to call wrong and right and he should follow it.</p>
 
                         <div class="h4">No need to take anything personally</div>
                         <p>If one day your child throws a tantrum and tells you that he hates you, you as a parent will
-                            naturally be upset. We may
-                            have a down time from this upset and it will affect the baby. Instead of taking this type of
-                            speech so personally, one
-                            can think why he is saying it? He can be asked and he can be told what he says can improve
-                            the situation.</p>
+                            naturally be upset. We may have a down time from this upset and it will affect the baby.
+                            Instead of taking this type of speech so
+                            personally, one can think why he is saying it? He can be asked and he can be told what he
+                            says can improve the situation.</p>
                         <div class="h4">You have to regulate your emotions by yourself.</div>
                         <p>
                             When you feel like you can't control yourself, take a little break and do what you feel like
-                            doing. It is most
-                            important. It's not like someone needs to be alone for 5 hours to keep themselves in shape
-                            or something like that.
-                            That's an exaggeration. It can be having a coffee alone, listening to a favorite music or
-                            something else. So that people
-                            around me don't take it negatively, they can be told why I need this little time alone.
-                            There is a lot to learn from a previous parenting mistake and correcting it actually
-                            guarantees one to be a better
-                            parent in the future. There is no reason to feel so guilty about old mistakes. We cannot
-                            change what has happened but we
-                            can take care to prevent it from happening in the future. Just let it go.
+                            doing. It is most important. It's not like someone needs to be alone for 5 hours to keep
+                            themselves in shape or something like that. That's an exaggeration. It
+                            can be having a coffee alone, listening to a favorite music or something else. So that
+                            people around me don't take it negatively, they can be told why I need this little time
+                            alone. There is a lot to learn from a previous
+                            parenting mistake and correcting it actually guarantees one to be a better parent in the
+                            future. There is no reason to feel so guilty about old mistakes. We cannot change what has
+                            happened but we can take care to prevent
+                            it from happening in the future. Just let it go.
 
                         </p>
-
-
+                        </p>
                     </div>
 
                 </div>
-
             </div>
-            <div class="col-lg-3">
-                <div class="h3 bg-primary text-white p-3">Related Blogs</div>
+            <div class="col-lg-2"><br><br><br><br><br><br><br><br><br><br>
+                <h1 class="rheading"><span>Related Blogs</span></h1>
+
                 <div class="row">
-                    <div class="col-lg-12 my-3"><a class="blogsLink" href="children_development.html">Learn about
-                            children
-                            development and make
-                            better future</a></div>
-                    <div class="col-lg-12 my-3"><a class="blogsLink" href="parenting&guilt.html">Parenting and Guilt</a>
+
+                    <div class="col-lg-6  brelated-img">
+                        <img class="my-5 img-thumbnail" src="../images/blogs/diaper-change.jpeg" alt="">
                     </div>
-                    <div class="col-lg-12 my-3"><a class="blogsLink" href="90days_motherhood.html">90 days of Mother
-                            hood</a>
+                    <div class="col-lg-6 blog-link">
+                        <a href="diaper24hrs.html" target="_blank"> <br><br> 24hrs diapers </a>
                     </div>
-                    <div class="col-lg-12 my-3"><a class="blogsLink" href="child_breakfast.html">Child Breakfast</a>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6  brelated-img">
+                        <img class="img-thumbnail" src="../images/blogs/child-breakfast.jpg" alt=""
+                            class="my-3 img-thumbnail">
                     </div>
-                    <div class="col-lg-12 my-3"><a class="blogsLink" href="14ways_father.html">14 ways of Father helps a
-                            mother</a></div>
-                    <div class="col-lg-12 my-3"><a class="blogsLink" href=""></a></div>
-                    <div class="col-lg-12 my-3"><a class="blogsLink" href=""></a></div>
-                    <div class="col-lg-12 my-3"><a class="blogsLink" href=""></a></div>
-                    <div class="col-lg-12 my-3"><a class="blogsLink" href=""></a></div>
+                    <div class="col-lg-6 blog-link">
+                        <a href="child_breakfast.html" target="_blank"> <br><br> Child Breakfast</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6  brelated-img">
+                        <img class="img-thumbnail" src="../images/blogs/mother_baby.jpg" alt=""
+                            class="my-3 img-thumbnail">
+                    </div>
+                    <div class="col-lg-6 blog-link">
+                        <a href="90days_motherhood.html" target="_blank"> <br><br> 90 Days of Motherhood</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6  brelated-img">
+                        <img class="img-thumbnail" src="../images/blogs/development.jpg" alt=""
+                            class="my-3 img-thumbnail">
+                    </div>
+                    <div class="col-lg-6 blog-link">
+                        <a href="children_development.html" target="_blank"> <br><br> Children development</a>
+                    </div>
+                </div>
+                <!--
+                <div class="row">
+                    <div class="col-lg-6  brelated-img">
+                        <img class="img-thumbnail" src="../images/blogs/guilt-mother.jpg" alt="" class="my-3 img-thumbnail">
+                    </div>
+                    <div class="col-lg-6 blog-link">
+                        <a href="parenting&guilt.html"> <br><br>Parenting and Guilt</a>
+                    </div>
+                </div>
+                -->
+                <div class="row">
+                    <div class="col-lg-6  brelated-img">
+                        <img class="img-thumbnail" src="../images/blogs/father-mother.jpg" alt=""
+                            class="my-3 img-thumbnail">
+                    </div>
+                    <div class="col-lg-6 blog-link">
+                        <a href="14ways_father.html" target="_blank"> <br><br>14 Ways Father can help Mother.</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6  brelated-img">
+                        <img class="img-thumbnail" src="../images/blogs/babies-talking.jpg" alt=""
+                            class="my-3 img-thumbnail">
+                    </div>
+                    <div class="col-lg-6 blog-link">
+                        <a href="how_to_talk.html" target="_blank"> <br><br> How to talk until 2 years </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6  brelated-img">
+                        <img class="img-thumbnail" src="../images/blogs/taller-child.jpg" alt=""
+                            class="my-3 img-thumbnail">
+                    </div>
+                    <div class="col-lg-6 blog-link">
+                        <a href="taller.html" target="_blank"> <br><br> 10 Foods That Make Your Child Taller </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6  brelated-img">
+                        <img class="img-thumbnail" src="../images/blogs/taller-child.jpg" alt=""
+                            class="my-3 img-thumbnail">
+                    </div>
+                    <div class="col-lg-6 blog-link">
+                        <a href="taller.html" target="_blank"> <br><br> How to talk until 2 years </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6  brelated-img">
+                        <img class="img-thumbnail" src="../images/blogs/development.jpg" alt=""
+                            class="my-3 img-thumbnail">
+                    </div>
+                    <div class="col-lg-6 blog-link">
+                        <a href="children_development.html" target="_blank"> <br><br> Children development</a>
+                    </div>
                 </div>
 
+                <div class="row">
+                    <div class="col-lg-6  brelated-img">
+                        <img class="img-thumbnail" src="../images/blogs/guilt-mother.jpg" alt=""
+                            class="my-3 img-thumbnail">
+                    </div>
+                    <div class="col-lg-6 blog-link">
+                        <a href="parenting&guilt.html" target="_blank"> <br><br>Parenting and Guilt</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6  brelated-img">
+                        <img class="img-thumbnail" src="../images/blogs/father-mother.jpg" alt=""
+                            class="my-3 img-thumbnail">
+                    </div>
+                    <div class="col-lg-6 blog-link">
+                        <a href="14ways_father.html" target="_blank"> <br><br>14 Ways Father can help Mother.</a>
+                    </div>
+                </div>
+                <!--
 
+                <div class="row">
+                    <div class="col-lg-4 img-thumbnail brelated-img"></div>
+                    <div class="col-lg-8"></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 img-thumbnail brelated-img"></div>
+                    <div class="col-lg-8"></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 img-thumbnail brelated-img"></div>
+                    <div class="col-lg-8"></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 img-thumbnail brelated-img"></div>
+                    <div class="col-lg-8"></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 img-thumbnail brelated-img"></div>
+                    <div class="col-lg-8"></div>
+                </div>
+            -->
             </div>
+
+    </main>
+    <footer class="footer-basic ">
+        <div class="row d-flex">
+            <div class="col-2 company-name">Children Cloud</div>
+            <div class="col-1">
+                <ul>
+                    <li class="list-head">Customers</li>
+                    <li class="cust">Day care center</li>
+                    <li class="cust">Public</li>
+                </ul>
+            </div>
+            <div class="col-2">
+                <ul>
+                    <li class="list-head">Quick Links</li>
+                    <li><a class="footer-link" href="#about">
+                            Home</a>
+                    </li>
+                    <li>
+                        <a href="" class="footer-link"></a>
+                    </li>
+                    <li>
+                        <a class="footer-link" href="parenting_blogs/blogs_home.html">Parenting Blog</a>
+                    </li>
+                    <li>
+                        <a href="daycare_categorywise\daycare_categorywise.php" class="footer-link">Day Care
+                            Categories</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="col-2">
+                <ul>
+                    <li class="list-head">Contributor</li>
+                    <li><a class="footer-link" href="https://www.linkedin.com/in/nidita-roy-0537b31b0/"></i>Nidita
+                            Roy</a>
+                    </li>
+                    <li><a class="footer-link"
+                            href="https://www.linkedin.com/in/zannatul-fardaush-tripty-8481241b2/">Zannatul Fardaush
+                            Tripty</a></li>
+                    <li><a class="footer-link"
+                            href="https://www.linkedin.com/in/rowshon-akter-roshni-a547461a6/">Rowshon
+                            Akter Roshni</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="col-3">
+                <div class="list-head">Contact Info
+                    <ul>
+                        <li class="footer-link"><span><i class="fa-solid fa-envelope"></i>
+                                u1804018@student.cuet.ac.bd</span>
+                        </li>
+                        <li class="footer-link"><i class="fa-solid fa-envelope"></i> u1804030@student.cuet.ac.bd
+                        </li>
+                        <li class="footer-link"><i class="fa-solid fa-envelope"></i> u1804003@student.cuet.ac.bd
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-2">
+                <div class="list-head">Follow Us</div>
+
+                <div class="row row-cols-lg-3 row-cols-3 row-cols-md-3">
+                    <div class="col"><i class="footer-link fa-brands fa-facebook-square"></i></div>
+                    <div class="col"><i class="footer-link fa-solid fa-paper-plane"></i></div>
+                    <div class="col"><i class="footer-link fa-brands fa-instagram-square"></i></div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </footer>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

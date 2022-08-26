@@ -275,7 +275,8 @@ ul>.info-edit {
 }
 
 .info-edit a:hover {
-    color: var(--green);
+    color: var(--dark-blue);
+    font-weight: 800;
 }
 
 .info-img {
@@ -336,4 +337,12 @@ hr {
     height: .5rem;
     margin-top: 1rem;
 
+}
+
+.user-name-top {
+    text-decoration: none;
+    border-radius: 1px solid var(--dark-green);
+    font-size: var(--font-size);
+    font-weight: var(--weight);
+    color: var(--dark-blue);
 }

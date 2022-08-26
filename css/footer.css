@@ -9,14 +9,12 @@
     --weight: 600;
     --title-size: 2.5rem;
     --font-size: 1.5rem;
-
     --black: #444;
     --light-color: #a8acc2;
     --border: .1rem solid rgba(0, 0, 0, .1);
     --border2: .1rem solid rgba(0, 0, 0, .1);
     --border-hover: .1rem solid var(--dark-color);
     --border2-hover: .1rem solid var(--green);
-
     --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
 }
 
@@ -37,13 +35,21 @@
     color: gray;
 }
 
-.footer-basic {
-    padding: 3rem;
 
+.footer-basic {
+    height: 15rem;
+    bottom: 0;
+    width: 100%;
+    padding: 3rem;
+    z-index: 1000;
     background-color: var(--green);
+    font-size: 1.2rem;
+
+
 }
 
 .footer-basic .company-name {
+
     font-style: italic;
     color: var(--dark-blue);
     font-size: 2.5rem;
@@ -52,9 +58,6 @@
     transform: scale(1.1);
 }
 
-
-
-
 .footer-basic .list-head {
     font-weight: var(--weight);
     font-size: var(--font-size);
@@ -62,27 +65,29 @@
 }
 
 .footer-basic ul {
-
     padding: 0;
     list-style: none;
-    line-height: 1.6;
     margin-bottom: 0;
     color: var(--dark-green);
     font-size: var(--font-size);
+}
+
+.cust {
+    font-size: 1.2rem;
 }
 
 .footer-basic .cust:hover {
     color: white;
 }
 
-
 .footer-link {
+
     text-decoration: none;
-    font-size: var(--font-size);
+    font-size: 1.2rem;
+    padding: 0;
     color: var(--dark-green);
 }
 
 .footer-link:hover {
     color: white;
-
 }

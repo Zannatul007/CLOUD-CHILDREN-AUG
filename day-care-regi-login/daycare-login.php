@@ -2,11 +2,17 @@
 <html lang="en">
 <?php
 session_start();
+
 ?>
 <?php
 $daycare = $people = $userlogged = "";
-$daycare = $_SESSION['daycare-name'];
-$people = $_SESSION['user-name'];
+if (isset($_SESSION["daycare-name"])) {
+    $daycare = $_SESSION['daycare-name'];
+}
+if (isset($_SESSION["user-name"])) {
+    $people = $_SESSION['user-name'];
+}
+
 if ($daycare != "") {
     $userlogged = $daycare;
 }
@@ -36,6 +42,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true){
     <!--Customize css link-->
     <!-- <link rel="stylesheet" href="../css/style_new.css"> -->
     <link rel="stylesheet" href="../css/form.css">
+    <link rel="stylesheet" href="../css/footer.css">
 
 
     <!--Swiper cdn-->
@@ -46,7 +53,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true){
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 
     <!-- font awesome cdn link  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!--comapny logo font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -79,11 +86,10 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true){
             </button>
             <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul class="navbar-nav me-auto  ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#about" class="nav-link">About Us</a></li>
-                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
 
-                    <li class="nav-item dropdown">
+
+                    <!-- <li class="nav-item dropdown">
                         <a class="link nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Child-Care Categories
                         </a>
@@ -107,10 +113,10 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true){
                             </li>
                             <li><a class="dropdown-item" href="#">Foreigner-Child</a></li>
                         </ul>
-                    </li>
+                    </li> -->
 
 
-                    <li><a href="#parenting-blogs" class="nav-link">Parenting-Guides</a></li>
+                    <li><a href="../parenting_blogs/blogs_home.html" class="nav-link">Parenting-Guides</a></li>
                 </ul>
 
             </div>
@@ -183,7 +189,9 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true){
                                 $_SESSION["loggedin"] = true;
                                 $_SESSION['daycare-email'] = $email;
                                 $_SESSION["daycare-name"] = $daycare_name;
-                                echo '<script>window.location.href = "../booking/booking_checklist_daycare.php"</script>';
+                                $_SESSION['day-care-logged-in'] = true;
+
+                                echo '<script>window.location.href = "../index_daycare.php"</script>';
                             } else {
                                 $passwordErr = "Password is incorrect!";
                             }
@@ -230,44 +238,69 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true){
 
     </main>
     <footer class="footer-basic ">
-        <div class="row row-cols-lg-5 row-cols-md-3 row-cols-2">
-            <div class="col company-name">Children Cloud</div>
-            <div class="col">
+        <div class="row d-flex">
+            <div class="col-2 company-name">Children Cloud</div>
+            <div class="col-1">
                 <ul>
                     <li class="list-head">Customers</li>
                     <li class="cust">Day care center</li>
                     <li class="cust">Public</li>
                 </ul>
             </div>
-            <div class="col">
+            <div class="col-2">
                 <ul>
-                    <li class="list-head">Services</li>
+                    <li class="list-head">Quick Links</li>
                     <li><a class="footer-link" href="#about">
                             Home</a>
                     </li>
                     <li>
+                        <a href="" class="footer-link"></a>
+                    </li>
+                    <li>
                         <a class="footer-link" href="parenting_blogs/blogs_home.html">Parenting Blog</a>
                     </li>
-
-                </ul>
-            </div>
-            <div class="col">
-                <ul>
-                    <li class="list-head">Further Information</li>
-                    <li><a class="footer-link" href="../terms_condition.html">Terms and condition</a>
+                    <li>
+                        <a href="daycare_categorywise\daycare_categorywise.php" class="footer-link">Day Care
+                            Categories</a>
                     </li>
-                    <li><a class="footer-link" href="../privacy_policy.html">Privacy policy</a></li>
-                    <li><a class="footer-link" href="contact_us.html">Contact Us</a></li>
 
                 </ul>
             </div>
-            <div class="col">
+            <div class="col-2">
+                <ul>
+                    <li class="list-head">Contributor</li>
+                    <li><a class="footer-link" href="https://www.linkedin.com/in/nidita-roy-0537b31b0/"></i>Nidita
+                            Roy</a>
+                    </li>
+                    <li><a class="footer-link" href="https://www.linkedin.com/in/zannatul-fardaush-tripty-8481241b2/">Zannatul Fardaush
+                            Tripty</a></li>
+                    <li><a class="footer-link" href="https://www.linkedin.com/in/rowshon-akter-roshni-a547461a6/">Rowshon
+                            Akter Roshni</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="col-3">
+                <div class="list-head">Contact Info
+                    <ul>
+                        <li class="footer-link"><span><i class="fa-solid fa-envelope"></i>
+                                u1804018@student.cuet.ac.bd</span>
+                        </li>
+                        <li class="footer-link"><i class="fa-solid fa-envelope"></i> u1804030@student.cuet.ac.bd
+                        </li>
+                        <li class="footer-link"><i class="fa-solid fa-envelope"></i> u1804003@student.cuet.ac.bd
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-2">
                 <div class="list-head">Follow Us</div>
 
                 <div class="row row-cols-lg-3 row-cols-3 row-cols-md-3">
-                    <div class="col"><i class="fa-brands fa-facebook-square"></i></div>
-                    <div class="col"><i class="fa-solid fa-paper-plane"></i></div>
-                    <div class="col"><i class="fa-brands fa-instagram-square"></i></div>
+                    <div class="col"><i class="footer-link fa-brands fa-facebook-square"></i></div>
+                    <div class="col"><i class="footer-link fa-solid fa-paper-plane"></i></div>
+                    <div class="col"><i class="footer-link fa-brands fa-instagram-square"></i></div>
 
 
                 </div>
