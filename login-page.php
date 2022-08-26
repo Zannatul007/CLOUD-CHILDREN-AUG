@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Bootstrap Link-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!--Customize css link-->
+    <link rel="stylesheet" href="css/style_new.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+
+    <!--Swiper cdn-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../css/swiper.css">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
+
+    <!--comapny logo font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+    <title>Children-Cloud</title>
+</head>
+
+<body>
+
+
+    <header class="header container-fluid">
+        <section class="header-in fixed-top">
+            <div class="header-1">
+                <div id="company-logo"><img src="images/company-logo-removebg-preview.png" alt="">
+                    <a href="#"> Cloud
+                        Children </a>
+                </div>
+                <!-- <li class="user-drop nav-item dropdown ">
+                    <a class="link nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-user" id="login-btn"></i>
+                    </a> -->
+                <!-- <ul class="dropdown-menu" aria-labelledby="user-dropdown">
+                        <li><a class="dropdown-item" href="login-page.html">Log In</a></li>
+                        <hr>
+                        <li><a class="dropdown-item" href="register-page.html">Register</a></li>
+                    </ul> -->
+
+            </div>
+
+            <!--navigation Bar-->
+
+            <nav class="header-2 navigation-bar navbar navbar-expand-lg">
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon" style="font-weight: 900"><img src="images/menu-burger.png" style="height: 2rem;" alt=""></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav me-auto  ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <!-- <li><a href="#about" class="nav-link">About Us</a></li>
+                        <li><a href="#services" class="nav-link">Services</a></li> -->
+
+                        <li class="nav-item dropdown">
+                            <a class="link nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Child-Care Categories
+                            </a>
+                            <ul class="dropdown-menu" id="dropmenu" aria-labelledby="navbarDropdown">
+
+                                <li><a class="dropdown-item" href="#">Toddler</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Pre-School</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">School-Age</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Special-Child</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Foreigner-Child</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li><a href="#parenting-blogs" class="nav-link">Parenting-Guides</a></li>
+                    </ul>
+
+                </div>
+
+            </nav>
+
+
+        </section>
+    </header>
+    <main>
+        <br><br><br>
+
+        <section class="container d-flex justify-content-center ">
+
+            <div class="row d-flex align-flex-center">
+                <div class="login-page col-lg-6 col-12">
+                    <div class="card border-0  shadow-lg h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Want to login as an user?</h5>
+                            <p class="card-text">Click here to login. <a href="user-regi-login/user-login.php">Sign in
+                                    as an user</a>
+                            </p>
+                        </div>
+                    </div>
+                    <br>
+                    <p style="text-align:center;"><a href=" user-regi-login/user-regi.php" style="text-decoration: none; text-align:center;">Create
+                            account</a> as an user</p>
+
+                </div>
+                <div class="login-page col-lg-6 col-12">
+                    <div class="border-0 shadow-lg h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Want to login as a Day Care center??</h5>
+                            <p class="card-text">Click here to login.<a href="day-care-regi-login/daycare-login.php">
+                                    Sign In as DayCare </a> </p>
+                        </div>
+                    </div>
+                    <br>
+                    <p style="text-align:center;"><a href="day-care-regi-login/daycare-regi-new.php" style="text-decoration: none;">Create
+                            account</a> as an DayCare Center</p>
+                </div>
+
+            </div>
+
+        </section>
+        <br><br><br><br>
+    </main>
+
+    <footer class="footer-basic ">
+        <div class="row d-flex">
+            <div class="col-2 company-name">Children Cloud</div>
+            <div class="col-1">
+                <ul>
+                    <li class="list-head">Customers</li>
+                    <li class="cust">Day care center</li>
+                    <li class="cust">Public</li>
+                </ul>
+            </div>
+            <div class="col-2">
+                <ul>
+                    <li class="list-head">Quick Links</li>
+                    <li><a class="footer-link" href="#about">
+                            Home</a>
+                    </li>
+                    <li>
+                        <a href="" class="footer-link"></a>
+                    </li>
+                    <li>
+                        <a class="footer-link" href="parenting_blogs/blogs_home.html">Parenting Blog</a>
+                    </li>
+                    <li>
+                        <a href="daycare_categorywise\daycare_categorywise.php" class="footer-link">Day Care
+                            Categories</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="col-2">
+                <ul>
+                    <li class="list-head">Contributor</li>
+                    <li><a class="footer-link" href="https://www.linkedin.com/in/nidita-roy-0537b31b0/"></i>Nidita
+                            Roy</a>
+                    </li>
+                    <li><a class="footer-link" href="https://www.linkedin.com/in/zannatul-fardaush-tripty-8481241b2/">Zannatul Fardaush
+                            Tripty</a></li>
+                    <li><a class="footer-link" href="https://www.linkedin.com/in/rowshon-akter-roshni-a547461a6/">Rowshon
+                            Akter Roshni</a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="col-3">
+                <div class="list-head">Contact Info
+                    <ul>
+                        <li class="footer-link"><span><i class="fa-solid fa-envelope"></i>
+                                u1804018@student.cuet.ac.bd</span>
+                        </li>
+                        <li class="footer-link"><i class="fa-solid fa-envelope"></i> u1804030@student.cuet.ac.bd
+                        </li>
+                        <li class="footer-link"><i class="fa-solid fa-envelope"></i> u1804003@student.cuet.ac.bd
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-2">
+                <div class="list-head">Follow Us</div>
+
+                <div class="row row-cols-lg-3 row-cols-3 row-cols-md-3">
+                    <div class="col"><i class="footer-link fa-brands fa-facebook-square"></i></div>
+                    <div class="col"><i class="footer-link fa-solid fa-paper-plane"></i></div>
+                    <div class="col"><i class="footer-link fa-brands fa-instagram-square"></i></div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
