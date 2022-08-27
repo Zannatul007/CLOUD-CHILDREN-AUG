@@ -9,12 +9,14 @@
     --weight: 600;
     --title-size: 2.5rem;
     --font-size: 1.5rem;
+
     --black: #444;
     --light-color: #a8acc2;
     --border: .1rem solid rgba(0, 0, 0, .1);
     --border2: .1rem solid rgba(0, 0, 0, .1);
     --border-hover: .1rem solid var(--dark-color);
     --border2-hover: .1rem solid var(--green);
+
     --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
 }
 
@@ -29,7 +31,6 @@
     text-transform: capitalize;
     transition: all .2s linear;
     transition: width none;
-    list-style: none;
 }
 
 html {
@@ -38,6 +39,7 @@ html {
     overflow-y: scroll;
     scroll-padding-top: 5rem;
     scroll-behavior: inherit;
+
 }
 
 html::-webkit-scrollbar {
@@ -52,7 +54,9 @@ html::-webkit-scrollbar-thumb {
     background: var(--dark-color);
 }
 
+
 #company-logo {
+
     font-size: medium;
 }
 
@@ -88,6 +92,7 @@ html::-webkit-scrollbar-thumb {
     height: 2rem;
     width: 2rem;
     color: var(--dark-green);
+
 }
 
 .swiper-button-next::after,
@@ -98,18 +103,23 @@ html::-webkit-scrollbar-thumb {
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
+
     color: var(--green);
 }
 
 .swiper-pagination::after {
+
     color: var(--dark-green);
+
 }
 
 .swiper-pagination:hover {
+
     color: var(--dark-green);
 }
 
 .swiper-pagination {
+
     color: var(--green);
 }
 
@@ -159,9 +169,13 @@ html::-webkit-scrollbar-thumb {
 
 .header-in {
     width: 100%;
+
     z-index: 200000;
     position: fixed;
+
 }
+
+
 
 .header .header-1 {
     background: #fff;
@@ -185,6 +199,7 @@ html::-webkit-scrollbar-thumb {
     color: var(--green);
 }
 
+
 .header .header-1 .icons div,
 .header .header-1 .icons a {
     font-size: 2.5rem;
@@ -203,17 +218,21 @@ html::-webkit-scrollbar-thumb {
 }
 
 .header .header-2 {
+
     background: var(--green);
     margin: auto;
 }
 
+
+
 .dropdown-menu {
-    background-color: #e8eced;
     z-index: 200002;
+
 }
 
 
 .navigation-bar {
+
     z-index: 200000;
     display: flex;
     align-items: center;
@@ -249,18 +268,21 @@ html::-webkit-scrollbar-thumb {
 .user-drop ul li:hover::after {
     color: var(--dark-green);
     width: 100%;
+
 }
 
 .navigation-bar li a,
 .user-drop li a {
     font-weight: var(--weight);
     color: var(--dark-green);
+
 }
 
 .navigation-bar li a:hover,
 .user-drop li a:hover {
     font-weight: var(--weight);
     color: var(--dark-blue);
+
 }
 
 .navigation-bar li a:active,
@@ -268,7 +290,18 @@ html::-webkit-scrollbar-thumb {
     color: white;
 }
 
+
+
+
+
+
+
+
+
+
+
 .home-sec .homepage-img {
+
     height: 100%;
     width: 100%;
 }
@@ -278,10 +311,12 @@ html::-webkit-scrollbar-thumb {
 }
 
 .about img {
+
     width: 100%;
     height: 50rem;
     opacity: 85%;
     transition: width 3s;
+
 }
 
 .about img:hover {
@@ -302,20 +337,29 @@ html::-webkit-scrollbar-thumb {
 .about-content p {
     color: var(--paletteColor1);
     font-size: var(--font-size);
+
 }
 
 .about-content :hover {
+
     transform: scale(.9);
 }
 
 .service-sec {
     background-image: url("../images/banner/back-ash.jpg");
+
 }
 
+
+
 .service-card {
+
     position: relative;
     height: 22rem;
     padding: 1.2rem;
+
+
+
 }
 
 .service-card .card {
@@ -340,6 +384,8 @@ html::-webkit-scrollbar-thumb {
 .service-card :hover {
     transform: scale(.9);
 }
+
+
 
 .blogs .blogs-slider .box {
     height: 50rem;
@@ -378,11 +424,15 @@ html::-webkit-scrollbar-thumb {
     color: var(--dark-blue);
 }
 
+
+
 .blogs .blogs-slider .box .content p {
+
     font-size: 1.4rem;
     color: var(--black);
     padding: 1rem 0;
     line-height: 2;
+
 }
 
 .blogs .blogs-slider .box .content a {
@@ -395,8 +445,10 @@ html::-webkit-scrollbar-thumb {
 }
 
 .blogs .blogs-slider .box .content a:hover {
+
     color: white;
     background-color: var(--dark-green);
+
 }
 
 .blog-img img {
@@ -416,10 +468,14 @@ html::-webkit-scrollbar-thumb {
 }
 
 .blog-link a {
+
     font-size: 1.2rem;
     margin-left: 0;
+
     text-decoration: none;
     color: var(--green);
+
+
 }
 
 .rheading {
@@ -441,7 +497,6 @@ html::-webkit-scrollbar-thumb {
     width: 10rem;
 }
 
-
 /*category page design*/
 
 .fa-star {
@@ -452,7 +507,9 @@ html::-webkit-scrollbar-thumb {
 
 .checked {
     color: orange;
+
 }
+
 
 hr {
     color: var(--green);
@@ -474,6 +531,7 @@ hr {
 }
 
 .cat-details-info {
+
     padding-bottom: 1rem;
     font-size: var(--font-size);
     color: var(--dark-green);
@@ -483,15 +541,20 @@ hr {
     font-weight: var(--weight);
 }
 
+
 .cat-img {
     height: 20rem;
     width: 100%;
+
+
 }
 
 .cat-img img {
     height: 100%;
     width: 100%;
 }
+
+
 
 .fa-star {
     font-weight: 900;
@@ -509,6 +572,7 @@ hr {
 }
 
 .facilities-detail {
+
     padding: 1.25rem;
     color: var(--dark-green);
     font-weight: var(--weight);
@@ -522,10 +586,11 @@ hr {
 
 
 /*give rating stars*/
-
 .rate {
+
     border-bottom-right-radius: 12px;
     border-bottom-left-radius: 12px;
+
 }
 
 .give-rating {
@@ -538,7 +603,11 @@ hr {
 .give-rating h2 {
     text-align: center;
     color: white;
+
 }
+
+
+
 
 .rating {
     display: flex;
@@ -578,11 +647,15 @@ hr {
     opacity: 0.4
 }
 
+
 .buttons {
     position: relative;
     top: 3rem;
     z-index: 25;
+
+
 }
+
 
 .rating-submit {
     border-radius: 2rem;
@@ -595,16 +668,19 @@ hr {
     width: 100%;
 }
 
+
 .rating-submit:hover {
+
+
     font-size: 1.65rem;
     color: #fff;
 }
+
 
 .give-comments {
     margin-top: 3rem;
     border-radius: 2rem;
     background-color: #2e8b567c;
-    z-index: 1000;
 }
 
 .give-comments h2 {
@@ -616,14 +692,22 @@ hr {
 
 .comment-sec {
     border-radius: 2rem;
+
 }
+
+
+
+
+
 
 .login-page {
     text-align: justify;
     margin-top: 8rem;
     padding: 5%;
+
     height: 25rem;
     width: 40rem;
+
 }
 
 .login-page .card-body {
@@ -642,9 +726,7 @@ hr {
     color: var(--green);
 }
 
-
 /*blinking book-now button*/
-
 .book-btn {
     margin-top: 3rem;
     background-color: #1c87c9;
@@ -656,6 +738,7 @@ hr {
     color: #eeeeee;
     cursor: pointer;
     display: inline-block;
+
     text-align: center;
     text-decoration: none;
 }
@@ -664,7 +747,13 @@ hr {
     background-color: #121c52;
     color: gray;
     font-size: medium;
+
+
 }
+
+
+
+
 
 .fa-paper-plane {
     color: gray;
@@ -672,6 +761,7 @@ hr {
 
 .footer-basic {
     padding: 3rem;
+
     background-color: var(--green);
 }
 
@@ -684,6 +774,9 @@ hr {
     transform: scale(1.1);
 }
 
+
+
+
 .footer-basic .list-head {
     font-weight: var(--weight);
     font-size: var(--font-size);
@@ -691,6 +784,7 @@ hr {
 }
 
 .footer-basic ul {
+
     padding: 0;
     list-style: none;
     line-height: 1.6;
@@ -703,6 +797,7 @@ hr {
     color: white;
 }
 
+
 .footer-link {
     text-decoration: none;
     font-size: var(--font-size);
@@ -711,6 +806,7 @@ hr {
 
 .footer-link:hover {
     color: white;
+
 }
 
 @keyframes glowing {
@@ -732,10 +828,12 @@ hr {
 }
 
 .book-btn {
+
     animation: glowing 1300ms infinite;
 }
 
 .book-btn a {
+
     text-decoration: none;
     color: white;
     font-size: 2rem;
@@ -743,8 +841,8 @@ hr {
 }
 
 
-/* desinging day_carecategorywise page*/
 
+/* desinging day_carecategorywise page*/
 .home {
     padding: 5rem;
 }
@@ -781,6 +879,7 @@ hr {
 }
 
 .cat-card .cat-name {
+
     font-size: 2rem;
     font-weight: var(--weight);
     color: var(--dark-blue);
@@ -809,6 +908,7 @@ hr {
 /* media queries  */
 
 @media (max-width:991px) {
+
     html {
         font-size: 55%;
     }
@@ -816,9 +916,12 @@ hr {
     .header .header-1 {
         padding: 2rem;
     }
+
+
 }
 
 @media (max-width:768px) {
+
     html {
         scroll-padding-top: 0;
     }
@@ -832,13 +935,18 @@ hr {
         width: 100%;
     }
 
+
+
     .header .header-1 {
         box-shadow: var(--box-shadow);
         position: relative;
     }
+
+
 }
 
 @media (max-width:450px) {
+
     html {
         font-size: 50%;
     }
@@ -847,4 +955,6 @@ hr {
         height: 25rem;
         width: 100%;
     }
+
+
 }

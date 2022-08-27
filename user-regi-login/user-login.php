@@ -201,7 +201,7 @@ if ($people != "") {
                         </div>
                         <div class="col-lg-12 mt-3" style="text-align:center">
                             <h6>Don't have an account?
-                                <a href="../user-regi-login/user-regi.html"> Create One</a>
+                                <a href="../user-regi-login/user-regi.php"> Create One</a>
                             </h6>
                         </div>
                     </div>

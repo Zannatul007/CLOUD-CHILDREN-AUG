@@ -16,12 +16,11 @@ session_start();
     <!--Customize css link-->
     <link rel="stylesheet" href="../css/style_new.css">
     <link rel="stylesheet" href="../css/form.css">
+    <link rel="stylesheet" href="../css/footer.css">
 
 
     <!--Swiper cdn-->
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="../css/footer.css">
-
     <link rel="stylesheet" href="../css/swiper.css">
 
     <!-- Link Swiper's CSS -->
@@ -35,7 +34,7 @@ session_start();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
 
-    <title>Day Care Registration</title>
+    <title>Day Care Booking Page</title>
 </head>
 
 <body>
@@ -148,61 +147,27 @@ session_start();
                 <div class="row">
                     <div class="col-lg-12 ">
                         <div class="cat-img">
-                            <img class=" z-depth-3 img-thumbnail" src="../images/b_new_born.jpg" alt="">
+                            <img class=" z-depth-3 img-thumbnail" src="../images/blogs/mother_baby.jpg" alt="">
                         </div>
                     </div>
-                    <div class="col-lg-12">
-                        <div class="star-rating">
-                            <span>
-                                <i class="fa-light fa-star-sharp"></i>
-                            </span>
-                            <span>
-                                <i class="fa-light fa-star-sharp"></i>
-                            </span>
-                            <span>
-                                <i class="fa-light fa-star-sharp"></i>
-                            </span>
-                            <span>
-                                <i class="fa-light fa-star-sharp"></i>
-                            </span>
-                            <span>
-                                <i class="fa-light fa-star-sharp"></i>
-                            </span>
-                            <span>
-                                <i class="fa-light fa-star-sharp"></i>
-                            </span>
 
 
-
-                        </div>
-                    </div>
-                    <div class="cat-details-info col-lg-12">
-                        <span>
-                            <i class="fa-light fa-star-sharp"></i>
-                        </span>
-                        <span>
-                            <i class="fa-light fa-star-sharp"></i>
-                        </span>
-                        <span>
-                            <i class="fa-light fa-star-sharp"></i>
-                        </span>
-                        <span>
-                            <i class="fa-light fa-star-sharp"></i>
-                        </span>
-                        <span>
-                            <i class="fa-light fa-star-sharp"></i>
-                        </span>
-                        <span>
-                            <i class="fa-light fa-star-sharp"></i>
-                        </span>
-                    </div>
                     <div class="cat-details-info name col-lg-12">
 
                         <?php
                         echo $row["dname"];
+
                         ?>
-                        <hr>
+                        <div class="cat-details-info col-lg-12">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+
                     </div>
+
                     <div class="cat-details-info col-lg-12">
                         <span>District : </span>
                         <?php
@@ -225,7 +190,7 @@ session_start();
                         <span>Hours : </span>
                         <span><?php
                                 echo $row["starttime"];
-                                ?></span>
+                                ?></span> to
                         <span><?php
                                 echo $row["starttime"];
                                 ?></span>
@@ -400,7 +365,6 @@ session_start();
 
 
     </div>
-
     <footer class="footer-basic ">
         <div class="row row-cols-lg-5 row-cols-md-3 row-cols-2">
             <div class="col company-name">Children Cloud</div>

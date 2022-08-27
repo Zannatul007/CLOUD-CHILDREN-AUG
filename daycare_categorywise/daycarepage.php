@@ -14,21 +14,20 @@ session_start();
     <link rel="stylesheet" href="../css/bootstrap.min.css">
 
     <!--Customize css link-->
-    <link rel="stylesheet" href="../css/style_new.css">
-    <link rel="stylesheet" href="../css/form.css">
-    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/style-new-daycare.css">
+    <link rel="stylesheet" href="../css/form-daycare.css">
+    <link rel="stylesheet" href="../css/footer-daycare-page.css">
 
 
     <!--Swiper cdn-->
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="../css/swiper.css">
 
-
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 
     <!-- font awesome cdn link  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <!--comapny logo font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -103,13 +102,10 @@ session_start();
             <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul class="navbar-nav me-auto  ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                     <li><a href="#home" class="nav-link">Home</a></li>
-                    <!-- <li><a href="#about" class="nav-link">About Us</a></li>
-                    <li><a href="#services" class="nav-link">Services</a></li> -->
-                    <li><a href="../daycare_categorywise/daycare_categorywise.php" class="nav-link">Available Daycares</a></li>
-                    <li><a href="../parenting_blogs/blogs_home.html" class="nav-link" target="_blank">Parenting-Guides</a></li>
-                    </li>
+                    <li><a href="#about" class="nav-link">About Us</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
 
-                    <!-- <li class="nav-item dropdown">
+                    <li class="nav-item dropdown">
                         <a class="link nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Child-Care Categories
                         </a>
@@ -133,10 +129,10 @@ session_start();
                             </li>
                             <li><a class="dropdown-item" href="#">Foreigner-Child</a></li>
                         </ul>
-                    </li> -->
+                    </li>
 
 
-                    <!-- <li><a href="#parenting-blogs" class="nav-link">Parenting-Guides</a></li> -->
+                    <li><a href="#parenting-blogs" class="nav-link">Parenting-Guides</a></li>
                 </ul>
 
             </div>
@@ -162,45 +158,25 @@ session_start();
                         echo $row["dname"];
 
                         ?>
-
-                        <?php
-
-                        $query = $mysqli->prepare("SELECT rating FROM daycare_info WHERE demail=?");
-                        $query->bind_param("s", $_SESSION['daycare-email']);
-                        $query->execute();
-                        $result_rating = $query->get_result();
-                        $row_rating = $result_rating->fetch_assoc();
-                        $query->close();
-                        $p = $row_rating['rating'];
-                        ?>
-
                         <div class="cat-details-info col-lg-12">
-                            <?php
-                            for ($j = 1; $j <= $p; $j++) {
-
-                            ?>
-                                <span style="color:yellow" class="fa fa-star checked"></span>
-                            <?php
-                            }
-                            for ($d = 1; $d <= 5 - $p; $d++) {
-                            ?>
-                                <span style="color:black" class="fa fa-star"></span>
-                            <?php
-                            }
-                            ?>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
                         </div>
 
                     </div>
 
                     <div class="cat-details-info col-lg-12">
-                        <span><i class="fa-solid fa-location-dot"></i> District : </span>
+                        <span>District : </span>
                         <?php
                         echo $row["district"];
                         ?>
                         <hr>
                     </div>
                     <div class="cat-details-info col-lg-12">
-                        <span><i class="fa-solid fa-location-dot"></i> Address : </span>
+                        <span>Address : </span>
                         <?php
                         echo $row["dadress"];
                         ?>
@@ -211,7 +187,7 @@ session_start();
                     </div>
 
                     <div class="cat-details-info col-lg-12">
-                        <span><i class="fa-solid fa-clock"></i> Hours : </span>
+                        <span>Hours : </span>
                         <span><?php
                                 echo $row["starttime"];
                                 ?></span> to
@@ -221,11 +197,11 @@ session_start();
                         <hr>
                     </div>
                     <div class="cat-details-info col=lg-12">
-                        <span><i class="fa-solid fa-phone"></i>Phone :</span>
+                        <span>Phone</span>
                         <hr>
                     </div>
                     <div class="cat-details-info col-lg-12">
-                        <span><i class="fa-solid fa-envelope"></i> Email :</span>
+                        <span>Email</span>
                         <hr>
                     </div>
 
@@ -308,69 +284,27 @@ session_start();
 
                 </div>
             </div>
-            <?php
-            if (isset($_POST["submitrating"])) {
-                $daycare_email = $_SESSION['daycare-email'];
-                $query = $mysqli->prepare("SELECT rating FROM daycare_info WHERE demail=?");
-                $query->bind_param("s", $daycare_email);
-                $query->execute();
-                $result = $query->get_result();
-                $row = $result->fetch_assoc();
-                $query->close();
-                $l = (int)$row["rating"];
-                $p = 1;
-                if ($l != 0) {
-                    $p = 2;
-                }
-                if (!empty($_POST["rating1"])) {
-                    $l += (int)$_POST["rating1"];
-                }
-                if (!empty($_POST["rating2"])) {
-                    $l += (int)$_POST["rating2"];
-                }
-                if (!empty($_POST["rating3"])) {
-                    $l += (int)$_POST["rating3"];
-                }
-                if (!empty($_POST["rating4"])) {
-                    $l += (int)$_POST["rating4"];
-                }
-                if (!empty($_POST["rating5"])) {
-                    $l += (int)$_POST["rating5"];
-                }
-                $l = (int)($l / $p);
-
-
-                $query = $mysqli->prepare("UPDATE daycare_info SET rating = ? WHERE demail= ?;");
-                $query->bind_param("is", $l, $daycare_email);
-                $query->execute();
-
-                $query->close();
-            }
-            ?>
 
             <div class="col-lg-3">
                 <div class="row">
-                    <form class="col-lg-12 give-rating" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                        <!-- <div class="col-lg-12 give-rating"> -->
+                    <div class="col-lg-12 give-rating">
                         <h2>Rate your Day Care Center</h2>
 
                         <div class="rating">
-                            <input type="checkbox" name="rating5" value="5" id="5"><label for="5">☆</label>
-                            <input type="checkbox" name="rating4" value="4" id="4"><label for="4">☆</label>
-                            <input type="checkbox" name="rating3" value="3" id="3"><label for="3">☆</label>
-                            <input type="checkbox" name="rating2" value="2" id="2"><label for="2">☆</label>
-                            <input type="checkbox" name="rating1" value="1" id="1"><label for="1">☆</label>
+                            <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
+                            <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
+                            <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
+                            <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
+                            <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
                         </div>
 
 
                         <div class="buttons px-4 mt-0">
 
-                            <button class="rating-submit" type="submit" name="submitrating">Submit</button>
+                            <button class="rating-submit">Submit</button>
 
                         </div>
-                        <!-- </div> -->
-                    </form>
-
+                    </div>
                     <div class="col-lg-12 give-comments">
                         <h2>Day Care Reviews</h2>
                         <?php
@@ -432,69 +366,44 @@ session_start();
 
     </div>
     <footer class="footer-basic ">
-        <div class="row d-flex">
-            <div class="col-2 company-name">Children Cloud</div>
-            <div class="col-1">
+        <div class="row row-cols-lg-5 row-cols-md-3 row-cols-2">
+            <div class="col company-name">Children Cloud</div>
+            <div class="col">
                 <ul>
                     <li class="list-head">Customers</li>
                     <li class="cust">Day care center</li>
                     <li class="cust">Public</li>
                 </ul>
             </div>
-            <div class="col-2">
+            <div class="col">
                 <ul>
-                    <li class="list-head">Quick Links</li>
+                    <li class="list-head">Services</li>
                     <li><a class="footer-link" href="#about">
                             Home</a>
                     </li>
                     <li>
-                        <a href="" class="footer-link"></a>
-                    </li>
-                    <li>
                         <a class="footer-link" href="parenting_blogs/blogs_home.html">Parenting Blog</a>
                     </li>
-                    <li>
-                        <a href="daycare_categorywise\daycare_categorywise.php" class="footer-link">Day Care
-                            Categories</a>
-                    </li>
 
                 </ul>
             </div>
-            <div class="col-2">
+            <div class="col">
                 <ul>
-                    <li class="list-head">Contributor</li>
-                    <li><a class="footer-link" href="https://www.linkedin.com/in/nidita-roy-0537b31b0/"></i>Nidita
-                            Roy</a>
+                    <li class="list-head">Further Information</li>
+                    <li><a class="footer-link" href="../terms_condition.html">Terms and condition</a>
                     </li>
-                    <li><a class="footer-link" href="https://www.linkedin.com/in/zannatul-fardaush-tripty-8481241b2/">Zannatul Fardaush
-                            Tripty</a></li>
-                    <li><a class="footer-link" href="https://www.linkedin.com/in/rowshon-akter-roshni-a547461a6/">Rowshon
-                            Akter Roshni</a>
-                    </li>
+                    <li><a class="footer-link" href="../privacy_policy.html">Privacy policy</a></li>
+                    <li><a class="footer-link" href="contact_us.html">Contact Us</a></li>
 
                 </ul>
             </div>
-            <div class="col-3">
-                <div class="list-head">Contact Info
-                    <ul>
-                        <li class="footer-link"><span><i class="fa-solid fa-envelope"></i>
-                                u1804018@student.cuet.ac.bd</span>
-                        </li>
-                        <li class="footer-link"><i class="fa-solid fa-envelope"></i> u1804030@student.cuet.ac.bd
-                        </li>
-                        <li class="footer-link"><i class="fa-solid fa-envelope"></i> u1804003@student.cuet.ac.bd
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="col-2">
+            <div class="col">
                 <div class="list-head">Follow Us</div>
 
                 <div class="row row-cols-lg-3 row-cols-3 row-cols-md-3">
-                    <div class="col"><i class="footer-link fa-brands fa-facebook-square"></i></div>
-                    <div class="col"><i class="footer-link fa-solid fa-paper-plane"></i></div>
-                    <div class="col"><i class="footer-link fa-brands fa-instagram-square"></i></div>
+                    <div class="col"><i class="fa-brands fa-facebook-square"></i></div>
+                    <div class="col"><i class="fa-solid fa-paper-plane"></i></div>
+                    <div class="col"><i class="fa-brands fa-instagram-square"></i></div>
 
 
                 </div>

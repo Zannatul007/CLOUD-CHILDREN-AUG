@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-    //Starting Session
-    session_start();
-    ?>
-    <?php
-    //logged-User Checking
-    $daycare = $people = $userlogged = "";
-    if (isset($_SESSION["daycare-name"])) {
-        $daycare = $_SESSION['daycare-name'];
-    }
-    if (isset($_SESSION["user-name"])) {
-        $people = $_SESSION['user-name'];
-    }
+//Starting Session
+session_start();
+?>
+<?php
+//logged-User Checking
+$daycare = $people = $userlogged = "";
+if (isset($_SESSION["daycare-name"])) {
+    $daycare = $_SESSION['daycare-name'];
+}
+if (isset($_SESSION["user-name"])) {
+    $people = $_SESSION['user-name'];
+}
 
-    if ($daycare != "") {
-        $userlogged = $daycare;
-    }
-    if ($people != "") {
-        $userlogged = $people;
-    }
-    require_once "../config.php";
-    $booking_id = array();
-    $k = -1;
-    ?>
+if ($daycare != "") {
+    $userlogged = $daycare;
+}
+if ($people != "") {
+    $userlogged = $people;
+}
+require_once "../config.php";
+$booking_id = array();
+$k = -1;
+?>
 
 
 <head>
@@ -90,8 +90,7 @@
             <nav class="header-2 navigation-bar navbar navbar-expand-lg">
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon" style="font-weight: 900"><img src="images/menu-burger.png"
-                            style="height: 2rem;" alt=""></span>
+                    <span class="navbar-toggler-icon" style="font-weight: 900"><img src="images/menu-burger.png" style="height: 2rem;" alt=""></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarScroll">
                     <ul class="navbar-nav me-auto  ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
@@ -139,9 +138,9 @@
     <main>
         <div class="container home-sec">
             <h5 class="h1 book-state"><span>Confirmed Bookings
-            </span></h5>
+                </span></h5>
             <?php
-            
+
             $confirm = "Yes";
             $query = $mysqli->prepare("SELECT booking_id FROM booking_info WHERE demail=? AND confirmed=?");
             $query->bind_param("ss", $_SESSION['daycare-email'], $confirm);
@@ -149,39 +148,37 @@
             $result_prev = $query->get_result();
             $query->close();
             ?>
-            <form  action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <?php
-            while ($row_prev = $result_prev->fetch_assoc()) {
-                $k++;
-                $booking_id[$k] = $row_prev['booking_id'];
-                ?>
-            <div class="row g-4 ms-auto  book-state-detail ">
-
-                <div class="col-lg-6 col-10 booking-detail"> <span class="h3 id">Booking Id</span> <span class="info"><?php echo $row_prev['booking_id']?></span></div>
-                <div class="col-lg-4"></div>
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 <?php
-                       
-                $m = (string)$row_prev['booking_id'] . '_' . "details";
+                while ($row_prev = $result_prev->fetch_assoc()) {
+                    $k++;
+                    $booking_id[$k] = $row_prev['booking_id'];
                 ?>
-                <div class="col-lg-2 col-2"><button class=" see-details"type="submit" name="<?php echo $m; ?>">See details</button></div>
+                    <div class="row g-4 ms-auto  book-state-detail ">
+
+                        <div class="col-lg-6 col-10 booking-detail"> <span class="h3 id">Booking Id</span> <span class="info"><?php echo $row_prev['booking_id'] ?></span></div>
+                        <div class="col-lg-4"></div>
+                        <?php
+
+                        $m = (string)$row_prev['booking_id'] . '_' . "details";
+                        ?>
+                        <div class="col-lg-2 col-2"><button class=" see-details" type="submit" name="<?php echo $m; ?>">See details</button></div>
 
 
-            </div>
-            <?php
-            }
-            ?>
+                    </div>
+                <?php
+                }
+                ?>
             </form>
             <?php
-            for($i=0;$i<sizeof($booking_id);$i++)
-            {
-                if(isset($_POST[(string)$booking_id[$i]."_"."details"]))
-                {
-                $_SESSION['booking_id']=$booking_id[$i];
-                echo '<script>window.location.href = "book_details_design.php"</script>';
+            for ($i = 0; $i < sizeof($booking_id); $i++) {
+                if (isset($_POST[(string)$booking_id[$i] . "_" . "details"])) {
+                    $_SESSION['booking_id'] = $booking_id[$i];
+                    echo '<script>window.location.href = "book_details_design.php"</script>';
                 }
             }
-        
+
             ?>
         </div>
-
+        <script src="../js/bootstrap.bundle.min.js"></script>
     </main>
